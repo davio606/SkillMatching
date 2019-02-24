@@ -2,7 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
 def index(request):
-    return HttpResponse("This is our student matching app")
+    #return HttpResponse("This is our student matching app")
+    return render(request, 'match/index.html')
 
 def login(request):
     #return HttpResponse("This is the login page")

@@ -1,5 +1,13 @@
 from django.test import TestCase
 
-# Create your tests here.
-import pytest
+from .models import User
 
+# Create your tests here.
+#import pytest
+
+class LoginTests(TestCase):
+
+    def test_login(self):
+        e = User.objects.all()
+        u = User(username="test1")
+        self.assertIs(User.objects.filter(username="test1").exists(), False)

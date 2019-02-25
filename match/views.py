@@ -9,7 +9,7 @@ def index(request):
 
 def login(request):
     #return HttpResponse("This is the login page")
-    return render(request, 'match/login.html')
+    return render(request, 'match/login2.html')
 
 def submit(request):
     usernm = request.POST['username']

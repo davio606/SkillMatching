@@ -8,4 +8,8 @@ env: # => 4
 install: # => 5
     - pip install -r requirements.txt
 script: # => 7
+<<<<<<< HEAD
     - python manage.py test
+=======
+    - pytest
+>>>>>>> 685ad0957f314ecab4bd6a871e82f5861af7ebd1

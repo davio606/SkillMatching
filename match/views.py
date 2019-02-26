@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, render_to_response
 
 from .models import User
 
@@ -18,4 +18,5 @@ def submit(request):
     if (User.objects.filter(username=usernm, password=passwd).exists()):
         return HttpResponse("You are logged in")
     else: 
-        return HttpResponse("Username or Password Incorrect")
+        return render_to_response("match/login2.html", 
+                       {'invalid': True })

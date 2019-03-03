@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'match/style.css' %}">
 
 <div class="header">
-  <h1> Login to Grasp </h1>
+  <h1>Login to Grasp</h1>
 </div>
 
 <form action="{% url 'match:submit' %}" method="POST">
@@ -20,3 +20,8 @@
         </div>
 </form>
 
+
+{% if invalid %}
+<style> .incorrect {color: red;} </style>
+<div class="incorrect"> Your username or password is incorrect. </div>
+{% endif %}

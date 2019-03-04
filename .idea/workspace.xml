@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf436167-9190-4848-b6c7-25d81c8a6a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/match/templates/match/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/templates/match/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/match/templates/match/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/match/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/match/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="bf436167-9190-4848-b6c7-25d81c8a6a99" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/match/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+            <state relative-caret-position="608">
+              <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -91,7 +86,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/match/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -252,7 +247,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="8" y="59" width="1551" height="839" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2193159" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -372,8 +366,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/match/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        <state relative-caret-position="608">
+          <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

@@ -34,3 +34,7 @@ class HomepageURLRedirectTests(TestCase):
     def test_about_url(self):
         resolver = resolve('/match/about/')
         self.assertEqual(resolver.view_name, 'match:about')
+
+    def test_suggest_url(self):
+        resolver = resolve('/match/suggest/')
+        self.assertEqual(resolver.view_name, 'match:suggest')

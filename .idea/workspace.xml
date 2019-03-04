@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf436167-9190-4848-b6c7-25d81c8a6a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/match/templates/match/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/templates/match/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/match/templates/match/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/match/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/match/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/match/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/match/templates/match/suggest.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/match/tests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
@@ -47,11 +42,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/match/templates/match/suggest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/match/templates/match/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
+            <state relative-caret-position="625">
+              <caret line="87" lean-forward="true" selection-end-line="87" />
             </state>
           </provider>
         </entry>
@@ -76,15 +80,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="100" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -128,6 +123,7 @@
         <option value="$PROJECT_DIR$/match/templates/match/index.html" />
         <option value="$PROJECT_DIR$/match/templates/match/about.html" />
         <option value="$PROJECT_DIR$/match/tests.py" />
+        <option value="$PROJECT_DIR$/match/templates/match/suggest.html" />
       </list>
     </option>
   </component>
@@ -239,12 +235,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550454061252</updated>
       <workItem from="1550454062504" duration="6343000" />
-      <workItem from="1551647006139" duration="10098000" />
+      <workItem from="1551647006139" duration="10374000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15763000" />
+    <option name="totallyTimeSpent" value="16039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="8" y="59" width="1551" height="839" extended-state="0" />
@@ -383,13 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/match/templates/match/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/match/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -397,6 +386,20 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/match/templates/match/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="87" lean-forward="true" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/match/templates/match/suggest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
         </state>
       </provider>
     </entry>

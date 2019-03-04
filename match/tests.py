@@ -30,3 +30,7 @@ class HomepageURLRedirectTests(TestCase):
     def test_signup_url(self):
         resolver = resolve('/match/login/')
         self.assertEqual(resolver.view_name, 'match:login2')
+
+    def test_about_url(self):
+        resolver = resolve('/match/about/')
+        self.assertEqual(resolver.view_name, 'match:about')

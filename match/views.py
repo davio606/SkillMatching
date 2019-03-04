@@ -15,6 +15,10 @@ def signup(request):
     #return HttpResponse("This is the signup page")
     return render(request, 'match/login2.html')
 
+def about(request):
+    #return HttpResponse("This is the about page")
+    return render(request, 'match/about.html')
+
 def submit(request):
     usernm = request.POST['username']
     passwd = request.POST['password']

@@ -23,6 +23,11 @@ def suggest(request):
     #return HttpResponse("This is the suggest page")
     return render(request, 'match/suggest.html')
 
+def contact(request):
+    #return HttpResponse("This is the contact page")
+    return render(request, 'match/contact.html')
+
+
 def submit(request):
     usernm = request.POST['username']
     passwd = request.POST['password']

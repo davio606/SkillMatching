@@ -7,8 +7,4 @@ env: # => 4
 install: # => 5
     - pip install -r requirements-travis.txt
 script: # => 7
-<<<<<<< HEAD
-    - pytest
-=======
     - python manage.py test
->>>>>>> master

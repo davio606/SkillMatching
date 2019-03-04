@@ -27,6 +27,9 @@ def contact(request):
     #return HttpResponse("This is the contact page")
     return render(request, 'match/contact.html')
 
+def home(request):
+    return render(request, 'match/home.html')
+
 
 def submit(request):
     usernm = request.POST['username']

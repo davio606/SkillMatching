@@ -11,6 +11,23 @@ def login(request):
     #return HttpResponse("This is the login page")
     return render(request, 'match/login2.html')
 
+def signup(request):
+    #return HttpResponse("This is the signup page")
+    return render(request, 'match/login2.html')
+
+def about(request):
+    #return HttpResponse("This is the about page")
+    return render(request, 'match/about.html')
+
+def suggest(request):
+    #return HttpResponse("This is the suggest page")
+    return render(request, 'match/suggest.html')
+
+def contact(request):
+    #return HttpResponse("This is the contact page")
+    return render(request, 'match/contact.html')
+
+
 def submit(request):
     usernm = request.POST['username']
     passwd = request.POST['password']

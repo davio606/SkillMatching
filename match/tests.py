@@ -42,5 +42,3 @@ class HomepageURLRedirectTests(TestCase):
     def test_contact_url(self):
         resolver = resolve('/match/contact/')
         self.assertEqual(resolver.view_name, 'match:contact')
-
-

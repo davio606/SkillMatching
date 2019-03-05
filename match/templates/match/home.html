@@ -1,9 +1,100 @@
-{% extends "match/layout.html" %}
+<!DOCTYPE html>
+<head>
+  <title>Grasp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  .jumbotron {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 30px 15px;
+  }
+  .container-fluid {
+    padding: 30px 20px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+  }
 
-{% block content %}
+  .navbar {
+    margin-bottom: 0;
+    background-color: #4CAF50;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+
+  .display-4{
+	  color: rgb(2, 54, 2);
+	  font-size: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="match/about/">ABOUT</a></li>
+        <li><a href="match/suggest/">SUGGEST</a></li>
+        <li><a href="match/contact/">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Grasp</h1>
+  <p>We specialize in study buddying</p>
+  <p>You have logged in.</p>
+  {% block content %}
 	{% if user.is_authenticated %}
-			<p class="display-4">Hello, {{ user.username }}</p>
+			<h2 class="display-4">Hey, {{ user.username }}!</h2>
 	{% else %}
 		<a class="lead" href="{% url 'login' %}">Log in</a>
 	{% endif %}
 {% endblock content %}
+</div>
+
+</body>
+

@@ -36,7 +36,7 @@ def submit(request):
     passwd = request.POST['password']
 
     if (User.objects.filter(username=usernm, password=passwd).exists()):
-        return HttpResponse("You are logged in")
+        return render(request, 'match/home.html')
     else: 
         return render_to_response("match/login2.html", 
                        {'invalid': True })

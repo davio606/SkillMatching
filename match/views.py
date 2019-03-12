@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, render_to_response
+from django.views import generic
+from django import template
 
 from .models import User
 
@@ -30,13 +32,18 @@ def contact(request):
 def home(request):
     return render(request, 'match/home.html')
 
+def profile(request):
+    return render(request, 'match/profile.html')
 
 def submit(request):
+    model = User
     usernm = request.POST['username']
     passwd = request.POST['password']
+    user_list = User.objects.all()
+    
 
     if (User.objects.filter(username=usernm, password=passwd).exists()):
-        return render(request, 'match/home.html')
+        context = {'user_list': user_list, 'invalid': False}
+        return render(request, 'match/home.html', context)
     else: 
-        return render_to_response("match/login2.html", 
-                       {'invalid': True })
+        return render_to_response("match/login2.html", {'invalid': True })

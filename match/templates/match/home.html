@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
   <title>Grasp</title>
@@ -86,7 +87,7 @@
 <div class="jumbotron text-center">
   <h1>Grasp</h1>
   <p>We specialize in study buddying</p>
-  <p>You have logged in.</p>
+  <p>You are logged in.</p>
   {% block content %}
 	{% if user.is_authenticated %}
 			<h2 class="display-4">Hey, {{ user.username }}!</h2>
@@ -95,6 +96,16 @@
 	{% endif %}
 {% endblock content %}
 </div>
+
+<h3>Potential Study Buddies: </h3>
+
+{% if user_list %}
+    <ul>
+    {% for u in user_list %}
+        <li> <a href="{% url 'match:profile' %}">{{u.username}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
 
 </body>
 

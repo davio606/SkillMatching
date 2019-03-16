@@ -1,6 +1,7 @@
 from django.test import TestCase
-
+from django.test import Client
 from .models import User
+
 from django.urls import resolve
 
 # Create your tests here.
@@ -15,7 +16,7 @@ class LoginTests(TestCase):
         self.assertIs(True, True)
 
 
-class HomepageURLRedirectTests(TestCase):
+class IndexpageURLRedirectTests(TestCase):
 
     def test_homepage_url(self):
         resolver = resolve('/')
@@ -42,3 +43,9 @@ class HomepageURLRedirectTests(TestCase):
     def test_contact_url(self):
         resolver = resolve('/match/contact/')
         self.assertEqual(resolver.view_name, 'match:contact')
+
+class HomepageAfterLogin(TestCase):
+    def test_to_homepage_after_login(self):
+        resolver = resolve('/match/$/')
+        self.assertEqual(resolver.view_name, 'match:home')
+

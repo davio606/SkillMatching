@@ -95,16 +95,31 @@
 		<a class="lead" href="{% url 'login' %}">Log in</a>
 	{% endif %}
 {% endblock content %}
+
+ <form class="form-inline">
+      <div class="input-group">
+      <input class="form-control"
+             size="50"
+             type="search"
+             placeholder="Search for Potential Study Buddies"
+             name='search'>
+           <div class="input-group-btn">
+      <button class="btn btn-btn btn-danger" type="submit">Search</button>
+           </div>
+           </div>
+    </form>
 </div>
 
-<h3>Potential Study Buddies: </h3>
 
+<h2>Users List</h2>
 {% if user_list %}
     <ul>
     {% for u in user_list %}
-        <li> <a href="{% url 'match:profile' %}">{{u.username}}</a></li>
+        <li> <a href="{% url 'match:home' %}">{{u.username}}</a></li>
     {% endfor %}
     </ul>
+{% else %}
+    <p>No users are available.</p>
 {% endif %}
 
 </body>

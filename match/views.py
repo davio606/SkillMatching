@@ -30,7 +30,14 @@ def contact(request):
     return render(request, 'match/contact.html')
 
 def home(request):
-    return render(request, 'match/home.html')
+    users = User.objects.all()
+
+    if 'search' in request.GET:
+        search_term = request.GET['search']
+        users = users.filter(username__icontains=search_term)
+
+    context = {'user_list': users}
+    return render(request, 'match/home.html', context)
 
 def profile(request):
     return render(request, 'match/profile.html')

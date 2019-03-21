@@ -1,9 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, render_to_response
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from django import template
+from django.contrib.auth.models import User
 
-from .models import User
 
 def index(request):
     #return HttpResponse("This is our student matching app")
@@ -29,6 +30,7 @@ def contact(request):
     #return HttpResponse("This is the contact page")
     return render(request, 'match/contact.html')
 
+@login_required
 def home(request):
     users = User.objects.all()
 
@@ -39,18 +41,6 @@ def home(request):
     context = {'user_list': users}
     return render(request, 'match/home.html', context)
 
-def profile(request):
-    return render(request, 'match/profile.html')
-
-def submit(request):
-    model = User
-    usernm = request.POST['username']
-    passwd = request.POST['password']
-    user_list = User.objects.all()
-    
-
-    if (User.objects.filter(username=usernm, password=passwd).exists()):
-        context = {'user_list': user_list, 'invalid': False}
-        return render(request, 'match/home.html', context)
-    else: 
-        return render_to_response("match/login2.html", {'invalid': True })
+@login_required
+def profile (request):
+    return render (request, 'match/profile.html')

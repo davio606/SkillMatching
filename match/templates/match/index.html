@@ -71,11 +71,16 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="match/login/">SIGN IN</a></li>
-        <li><a href="match/signup/">SIGN UP</a></li>
-        <li><a href="match/about/">ABOUT</a></li>
-        <li><a href="match/suggest/">SUGGEST</a></li>
-        <li><a href="match/contact/">CONTACT</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'profile' %}">PROFILE</a></li>
+          <li><a href="{% url 'logout' %}">SIGN OUT</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">SIGN IN</a></li>
+          <li><a href="{% url 'register' %}">SIGN UP</a></li>
+        {% endif %}
+        <li><a href="url 'about'">ABOUT</a></li>
+        <li><a href="url 'suggest' ">SUGGEST</a></li>
+        <li><a href="url 'contact' ">CONTACT</a></li>
       </ul>
     </div>
   </div>
@@ -86,6 +91,32 @@
   <p>We specialize in study buddying</p>
 </div>
 
+<form class="form-inline">
+      <div class="input-group">
+      <input class="form-control"
+             size="50"
+             type="search"
+             placeholder="Search for Potential Study Buddies"
+             name='search'>
+           <div class="input-group-btn">
+      <button class="btn btn-btn btn-danger" type="submit">Search</button>
+           </div>
+           </div>
+    </form>
+</div>
+
+<div id="user-list" style="padding-left: 10px;">
+  <h2>Potential Study Buddies:</h2>
+  {% if user_list %}
+      <ul class="user-list">
+      {% for u in user_list %}
+          <li> <a href="{% url 'profile' %}">{{u.username}}</a></li> 
+      {% endfor %}
+      </ul>
+  {% else %}
+      <p>No users are available.</p>
+  {% endif %}
+</div>
 
 </body>
 </html>

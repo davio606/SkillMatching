@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
+    'crispy_forms',
     'match.apps.MatchConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,7 +86,7 @@ DATABASES = {
     }
 }
 
-LOGIN_URL = 'match/login'
+LOGIN_URL = '/login/'
 SOCIAL_AUTH_URL_NAMESPACE = 'match:social'
 LOGIN_REDIRECT_URL = 'match:home'
 
@@ -136,6 +138,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#profile pic help
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+AUTH_PROFILE_MODULE = "account.UserProfile"
+
 try:
     import django_heroku
     django_heroku.settings(locals())

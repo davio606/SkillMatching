@@ -24,13 +24,13 @@ class IndexpageURLRedirectTests(TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
 
-    def test_login_url(self):
-        resolver = resolve('/login/')
-        self.assertEqual(resolver.view_name, 'match:login2')
+    #def test_login_url(self):
+        #resolver = resolve('/login/')
+        #self.assertEqual(resolver.view_name, 'match:login2')
 
-    def test_signup_url(self):
-        resolver = resolve('/register/')
-        self.assertEqual(resolver.view_name, 'match:login2')
+    #def test_signup_url(self):
+        #resolver = resolve('/register/')
+        #self.assertEqual(resolver.view_name, 'match:login2')
 
     def test_about_url(self):
         resolver = resolve('/match/about/')

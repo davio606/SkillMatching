@@ -1,0 +1,32 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" type = "text/css" href="{% static 'users/main.css'%}">
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {%csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+            </div>
+        </form>
+        <div class ="border-top pt-3">
+                <a href="{% url 'match:social:begin' 'google-oauth2' %}">Login with Google</a><br>
+            <small class="text-muted">
+                Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

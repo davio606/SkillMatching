@@ -71,8 +71,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="match/login/">SIGN IN</a></li>
-        <li><a href="match/signup/">SIGN UP</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'profile' %}">PROFILE</a></li>
+          <li><a href="{% url 'logout' %}">SIGN OUT</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">SIGN IN</a></li>
+          <li><a href="{% url 'register' %}">SIGN UP</a></li>
+        {% endif %}
         <li><a href="match/about/">ABOUT</a></li>
         <li><a href="match/suggest/">SUGGEST</a></li>
         <li><a href="match/contact/">CONTACT</a></li>

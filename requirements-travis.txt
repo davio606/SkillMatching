@@ -3,3 +3,4 @@ gunicorn
 social-auth-app-django
 social-auth-core
 django-crispy-forms
+pillow

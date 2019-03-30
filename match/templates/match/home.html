@@ -119,13 +119,11 @@
   {% if user_list %}
       <ul class="user-list">
       {% for u in user_list %}
-          <li> <a href="{% url 'profile' %}">{{u.username}}</a></li> 
+          <li><a href="{% url 'match:choose' u.id %}">{{u.username}}</a></li> 
       {% endfor %}
       </ul>
   {% else %}
       <p>No users are available.</p>
   {% endif %}
 </div>
-
 </body>
-

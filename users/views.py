@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404, render, render_to_response
 
 #Sign up form
 def register(request):
@@ -16,8 +18,9 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
-@login_required
+#@login_required
 def profile(request):
+    #user = get_object_or_404(User, pk=user_id)
     if request.method == 'POST':
         u_form =UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)

@@ -116,12 +116,12 @@
 
 <div id="user-list" style="padding-left: 10px;">
   <h2>Potential Study Buddies:</h2>
-  {% if user_list %}
-      <ul class="user-list">
-      {% for u in user_list %}
-          <li><a href="{% url 'match:choose' u.id %}">{{u.username}}</a></li> 
+  {% if profile_list%}
+      <u1 class="user-list" style="list-style: none;">
+      {% for u in profile_list %}
+        <li><a href="{% url 'match:choose' u.user.id %}">{{u.user}}</a></li> 
       {% endfor %}
-      </ul>
+      </u1>
   {% else %}
       <p>No users are available.</p>
   {% endif %}

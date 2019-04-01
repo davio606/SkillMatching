@@ -8,6 +8,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from users.models import profile
 from users.forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from users.models import profile
+from django.db.models import Q
 
 
 def index(request):
@@ -57,11 +59,16 @@ def choose(request, user_id):
 
 @login_required
 def home(request):
-    users = User.objects.all()
+    #users = User.objects.all()
+    profiles = profile.objects.all()
 
     if 'search' in request.GET:
         search_term = request.GET['search']
-        users = users.filter(username__icontains=search_term)
+        #users = users.filter(username__icontains=search_term)
+        profiles = profiles.filter(Q(user__username__icontains=search_term) | Q(major__icontains=search_term) | Q(skill__icontains=search_term))
 
-    context = {'user_list': users}
+    context = {
+        #'user_list': users,
+        'profile_list': profiles,
+    }
     return render(request, 'match/home.html', context)

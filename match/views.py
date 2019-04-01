@@ -59,7 +59,7 @@ def choose(request, user_id):
         'p_form': p_form,
         'user': user,
     }
-    return render(request, 'users/profile.html', context)
+    return render(request, 'users/noEditProfile.html', context)
 
 @login_required
 def home(request):

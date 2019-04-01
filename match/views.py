@@ -49,7 +49,11 @@ def choose(request, user_id):
     else:
         u_form = UserUpdateForm(instance=user)
         p_form = ProfileUpdateForm(instance=user.profile)
-
+        u_form.fields['username'].disabled = True
+        u_form.fields['email'].disabled = True
+        p_form.fields['image'].disabled = True
+        p_form.fields['major'].disabled = True
+        p_form.fields['skill'].disabled = True
     context = {
         'u_form': u_form,
         'p_form': p_form,

@@ -1,4 +1,6 @@
+{% load crispy_forms_tags %}
 {% load static %}
+
 <!DOCTYPE html>
 <head>
   <title>Grasp</title>
@@ -8,6 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'match/homeStyle.css' %}">
+
   <style>
   .jumbotron {
     background-color: #4CAF50;
@@ -61,6 +64,51 @@
       margin: 10px 0;
     }
   }
+
+  .user-list {
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+   
+.user-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+   
+.user-list li:last-child {
+    border: none;
+  }
+   
+.user-list li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 5000px;
+    white-space: nowrap;
+   
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+  }
+   
+.user-list li a:hover {
+    font-size: 30px;
+    background: #f6f6f6;
+  }
+
+  hr {
+   display: block;
+   margin: 5px 0;
+  }
+
+  img {
+  border-radius: 55%;
+}
   </style>
 </head>
 <body>
@@ -116,11 +164,22 @@
 </div>
 
 <div id="user-list" style="padding-left: 10px;">
-  <h2>Potential Study Buddies:</h2>
+  <h1>Potential Study Buddies:</h1>
   {% if profile_list%}
       <u1 class="user-list" style="list-style: none;">
       {% for u in profile_list %}
-        <li><a href="{% url 'match:choose' u.user.id %}">{{u.user}}</a></li> 
+      <li class = "user-list">
+        <a href="{% url 'match:choose' u.user.id %}">
+          <span class="user-list" style="font-size:25px">
+            <img src="{{ u.image.url }}" width="60" height="60"/>
+              {{u.user}}<br/>
+          </span>
+          <span class="user-list" style="font-size:15px">
+            {{u.major}}<br/>
+        </span>
+        </a>
+      </li>
+      <hr>
       {% endfor %}
       </u1>
   {% else %}

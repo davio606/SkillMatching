@@ -5,37 +5,60 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<style>
+  .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 10000px;
+  margin: auto;
+  text-align: center;
+  max-height: 10000px;
+}
 
-<link rel="stylesheet" type = "text/css" href="{% static 'users/main.css'%}">
+.title {
+  color: grey;
+  font-size: 18px;
+}
 
-{% block content %}
-    <div class="content-section">
-      <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
-        <div class="media-body">
-          <h2 class="account-heading">{{ user.username }}</h2>
-          <p class="text-secondary"> {{ user.email }}</p>
-        </div>
-      </div>
-      <form method="POST" enctype="multipart/form-data">
-        {%csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Profile Info!</legend>
-            {{ u_form|crispy }}
-            {{ p_form|crispy }}
-        </fieldset>
-        <div class="form-group">
-        </div>
-    </form>
-    </div>
-    <h2>yo {{ user.major }} hey </h2>
-    <p class="text-secondary">{{ user.skill }}</p>
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 
-    <a href="/$/">Home Page</a></li>
-{% endblock content %}
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+<div class="card">
+  <h1 style="font-size:50px">{{ user.username }}</h1>
+  <img src="{{user.profile.image.url}}" alt="avatar" width="300" height="300">
+  <p class="major" style="font-size:25px"><b>Major:</b> {{ user.profile.major }}</p>
+  <p style="font-size:20px"><b>University of Virginia</b></p>
+  <p style="font-size:20px"><b>Skills:</b> {{ user.profile.skill }}</p>
+  <a href="#"><i class="fa fa-dribbble"></i></a> 
+  <a href="#"><i class="fa fa-twitter"></i></a> 
+  <a href="#"><i class="fa fa-linkedin"></i></a> 
+  <a href="#"><i class="fa fa-facebook"></i></a> 
+  <p><button>Contact</button></p>
+</div>
+
+<a href="/$/">Home Page</a></li>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -3,8 +3,9 @@ python: # => 2
     - "3.6"
 env: # => 4
     -DJANGO=2.1.5
+    -DJANGO_SETTINGS_MODULE = test_settings
 before_install:
-    - sudo apt-get -y install sqlite3
+    - sudo apt-get -y install sqlite3=3.8.3
 install: # => 5
     - pip install -r requirements-travis.txt
 script: # => 7

@@ -13,6 +13,7 @@ addons:
 #before_install:
 #    - sudo apt-get -y install sqlite3=3.8.3
 install: # => 5
+    - pip install -q Django==$DJANGO
     - pip install -r requirements-travis.txt
 script: # => 7
     - python manage.py test

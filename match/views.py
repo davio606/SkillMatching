@@ -10,6 +10,8 @@ from users.models import profile
 from users.forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from users.models import profile
 from django.db.models import Q
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def index(request):
@@ -30,6 +32,15 @@ def about(request):
 
 def suggest(request):
     #return HttpResponse("This is the suggest page")
+    return render(request, 'match/suggest.html')
+
+def email(request):
+    subject = "Suggestion from " + request.POST['fname'] + ' ' + request.POST['lname']
+    message = 'From: ' + request.POST['email'] + '\n \n' + "Message: " + request.POST['subject']
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = ['studentskillmatching@gmail.com']
+    send_mail(subject, message, email_from, recipient_list)
+    messages.success(request, f'Your suggestion has been sent!')
     return render(request, 'match/suggest.html')
 
 def contact(request):

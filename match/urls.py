@@ -18,7 +18,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('suggest/', views.suggest, name='suggest'),
     path('contact/', views.contact, name='contact'),
-    path('<int:user_id>/profile/', views.choose, name='choose')
+    path('<int:user_id>/profile/', views.choose, name='choose'),
+    path('email/', views.email, name='email')
 ] 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

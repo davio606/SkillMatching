@@ -101,6 +101,13 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='733751966149-uovoobcqf4epnc4hrnr2k4vctt1du8u2.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'YzUKu6ckSH_v_98LNsoxTRkz'
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "studentskillmatching@gmail.com"
+EMAIL_HOST_PASSWORD = "segfaultstrategists"
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 

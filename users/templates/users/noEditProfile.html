@@ -21,7 +21,7 @@
   font-size: 18px;
 }
 
-button {
+.contact {
   border: none;
   outline: 0;
   display: inline-block;
@@ -40,9 +40,10 @@ a {
   color: black;
 }
 
-button:hover, a:hover {
-  opacity: 0.7;
+.homepage {
+  padding: 8px; 
 }
+
 </style>
 
 <div class="card">
@@ -56,10 +57,10 @@ button:hover, a:hover {
   <a href="#"><i class="fa fa-twitter"></i></a> 
   <a href="#"><i class="fa fa-linkedin"></i></a> 
   <a href="#"><i class="fa fa-facebook"></i></a> 
-  <p><button>Contact</button></p>
+  <p class="contact"> <a href="mailto:{{user.email}}" style="color: white"> Contact </a></p>
 </div>
 
-<a href="/$/">Home Page</a></li>
+<p class="homepage"> <a href="/$/">Home Page</a> </p>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

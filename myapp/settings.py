@@ -42,13 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'social_django',
-    'account',
-    'pinax.invitations',
-    'pinax.teams',
-    'reversion',
+    #'account',
+    #'pinax.invitations',
+    #'pinax.teams',
+    #'reversion',
 ]
 
-SITE_ID=1
+#SITE_ID=1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'pinax.teams.middleware.TeamMiddleware'
+    #'pinax.teams.middleware.TeamMiddleware'
 ]
 
 ROOT_URLCONF = 'myapp.urls'

@@ -1,0 +1,68 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 10000px;
+  margin: auto;
+  text-align: center;
+  max-height: 10000px;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.contact {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.homepage {
+  padding: 8px; 
+}
+
+
+</style>
+
+<div class="card">
+  <h1 style="font-size:50px">{{ user.username }}</h1>
+  <h2>{{ user.email }}</h2>
+  <img src="{{user.profile.image.url}}" alt="avatar" width="300" height="300">
+  <p class="major" style="font-size:25px"><b>Major:</b> {{ user.profile.major }}</p>
+  <p style="font-size:20px"><b>University of Virginia</b></p>
+  <p style="font-size:20px"><b>Skills:</b> {{ user.profile.skill }}</p>
+  <a href="#"><i class="fa fa-dribbble"></i></a> 
+  <a href="#"><i class="fa fa-twitter"></i></a> 
+  <a href="#"><i class="fa fa-linkedin"></i></a> 
+  <a href="#"><i class="fa fa-facebook"></i></a> 
+  <p class="contact"> <a href="mailto:{{user.email}}" style="color: white"> Contact </a></p>
+</div>
+
+<p class="homepage"> <a href="/$/">Home Page</a> </p>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

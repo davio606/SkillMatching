@@ -81,13 +81,7 @@
       <li><a href="{% url 'register' %}">SIGN UP</a></li>
     {% endif %}
     <li><a href="/contact/">CONTACT</a></li>
-
-    {% if user.is_authenticated %}
-      <li><a href="/$/">HOMEPAGE</a></li>
-    {% else %}
-      <li><a href="/">HOMEPAGE</a></li>
-    {% endif %}
-
+    <li><a href="/$/">HOMEPAGE</a></li>
   </ul>
 </div>
 

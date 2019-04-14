@@ -21,4 +21,13 @@ class profile(models.Model):
             output_size = (300,300)
             img.thumbnail(output_size)
             img.save(self.image.path)
+""" 
+class Team(models.Model):
+    name = models.CharField(max_length=64, unique=True)
+    description = models.TextField(max_length=1024)
+    owner = models.ForeignKey(User, on_delete=models.PROTECT)
+class Player(models.Model):
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
+    team = models.ForeignKey('Team', on_delete=models.PROTECT) """
+
         

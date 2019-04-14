@@ -74,14 +74,13 @@
     {% if user.is_authenticated %}
       <li><a href="{% url 'profile' %}">PROFILE</a></li>
       <li><a href="{% url 'logout' %}">SIGN OUT</a></li>
-        <li><a href="/suggest/">SUGGEST</a></li>
 
     {% else %}
       <li><a href="{% url 'login' %}">SIGN IN</a></li>
       <li><a href="{% url 'register' %}">SIGN UP</a></li>
     {% endif %}
     <li><a href="/contact/">CONTACT</a></li>
-    <li><a href="/calendar/">CALENDAR</a></li>
+    <li><a href="/about/">ABOUT</a></li>
     <li><a href="/$/">HOMEPAGE</a></li>
   </ul>
 </div>
@@ -90,18 +89,81 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>About Grasp</h1>
-  <p>Our Story</p>
+  <h1>Calendar</h1>
+  <p>Adds directly to your Google Calendar</p>
 </div>
 
-<h1 style="margin-left: 20px"> Advanced Software Development: CS 3240 </h1>
+<style>
+  .sugg-container body {font-family: Arial, Helvetica, sans-serif;}
+  * {box-sizing: border-box;}
+  
+  .sugg-container input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  .sugg-container input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 200px;
+    font-size: 18px;
+  }
+  
+  .sugg-container input[type=submit]:hover {
+    background-color: #4CAF50;
+  }
+  
+  .sugg-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
 
-<p style="margin-left: 20px"> This website was created for the class, CS 3240 at the University of Virginia. The purpose of the application is to 
-  find specific study partners with certain skills and majors. Users can create their own profile, list their skills and majors,
-  and find others whom they would want to work with. The application's unique features include the ability to search for students
-  with specific skills and majors, and a feature to save profiles they like. If you have any questions for us, visit the contact
-  page. Or, if you have any suggestions, please help us by visiting the Suggest page. 
-</p>
+  .submit {
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    padding: 8px;
+    border: none;
+    background-color: #4CAF50
+  }
+
+  </style>
+  </head>
+  <body>
+  
+  <h2 align="center">Create Calendar Event</h2>
+  <form action="{% url 'match:event' %}" method="POST">
+      {% csrf_token %}
+  <div class="sugg-container">
+      <label for="ename">Event Title</label>
+      <input type="text" id="ename" name="ename" placeholder="Title for event..">
+
+      <label for="edesc" name="edesc" type="edesc">Event Description</label>
+      <textarea id="edesc" name="edesc" placeholder="Description of event.." style="height:200px"></textarea>
+  
+      <label for="sdate">Event Date</label>
+      <input type="datetime-local" id="sdate" name="sdate">
+
+      <div style="text-align:center;">
+        <input type="submit" value="Submit" style="margin:0px auto; display:block;">
+      </div>  
+  </form>
+  </div>
+  
+  </body>
+  </html>
 
 
 </body>

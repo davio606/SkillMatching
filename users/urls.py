@@ -11,6 +11,6 @@ from . import views
 app_name = 'users'
 urlpatterns = [
     path('<int:user_id>/profile/', views.profile, name='profile'),
-    url(r"^account/", include("account.urls")),
-    url(r"^teams/", include("pinax.teams.urls", namespace="pinax_teams")),
+    #url(r"^account/", include("account.urls")),
+    #url(r"^teams/", include("pinax.teams.urls", namespace="pinax_teams")),
 ] 

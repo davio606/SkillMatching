@@ -16,8 +16,10 @@ urlpatterns = [
     path('auth/', include('social_django.urls'), name='social'), 
     path('$/', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('logout/match/about/', views.about, name='about'),
     path('suggest/', views.suggest, name='suggest'),
     path('contact/', views.contact, name='contact'),
+    path('logout/match/contact/', views.contact, name='contact'),
     path('<int:user_id>/profile/', views.choose, name='choose'),
     path('email/', views.email, name='email')
 ] 

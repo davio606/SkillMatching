@@ -87,7 +87,7 @@ def event(request):
 def send(request):
     m = Message(sender=request.POST['userFrom'], reciever=request.POST['userTo'],message_content=request.POST['content'], subject=request.POST['subject'])
     m.save()
-    return render(request, 'match/message.html')
+    return render(request, 'match/success.html')
 
 
 def email(request):

@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.test import Client
-from .models import User
+from .models import User, profile
 
 from django.urls import resolve
 
@@ -48,6 +48,8 @@ class IndexpageURLRedirectTests(TestCase):
         resolver = resolve('/match/email/')
         self.assertEqual(resolver.view_name, 'match:email')
 
+
+
     def test_calendar_url(self):
         resolver = resolve('/match/calendar/')
         self.assertEqual(resolver.view_name, 'match:calendar')
@@ -60,3 +62,22 @@ class HomepageAfterLogin(TestCase):
     def test_to_homepage_after_login(self):
         resolver = resolve('/$/')
         self.assertEqual(resolver.view_name, 'match:home')
+
+    def test_to_suggest_after_login(self):
+        resolver = resolve('/suggest/')
+        self.assertEqual(resolver.view_name, 'match:suggest')
+
+    def test_to_calendar_after_login(self):
+        resolver = resolve('/calendar/')
+        self.assertEqual(resolver.view_name, 'match:calendar')
+
+    def test_to_event_after_login(self):
+        resolver = resolve('/event/')
+        self.assertEqual(resolver.view_name, 'match:event')
+
+    def test_contact_url(self):
+        resolver = resolve('/contact/')
+        self.assertEqual(resolver.view_name, 'match:contact')
+
+
+

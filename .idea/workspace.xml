@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0eb98034-bce3-4717-9099-a462e1558a0d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/match/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/templates/match/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/match/templates/match/message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/match/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/match/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="0eb98034-bce3-4717-9099-a462e1558a0d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/match/templates/match/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
-              <caret line="188" column="13" lean-forward="true" selection-start-line="188" selection-start-column="2" selection-end-line="188" selection-end-column="13" />
+              <caret line="188" column="13" selection-start-line="188" selection-start-column="2" selection-end-line="188" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#u1#0;n#div#1;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#u1#0;n#div#1;n#body#0;n#!!top" expanded="true" />
@@ -65,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/match/templates/match/message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
+            <state relative-caret-position="606">
+              <caret line="221" column="10" lean-forward="true" selection-start-line="187" selection-start-column="4" selection-end-line="221" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -314,7 +308,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20853000" />
+    <option name="totallyTimeSpent" value="21112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -428,7 +422,7 @@
     <entry file="file://$PROJECT_DIR$/match/templates/match/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="188" column="13" lean-forward="true" selection-start-line="188" selection-start-column="2" selection-end-line="188" selection-end-column="13" />
+          <caret line="188" column="13" selection-start-line="188" selection-start-column="2" selection-end-line="188" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#u1#0;n#div#1;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#u1#0;n#div#1;n#body#0;n#!!top" expanded="true" />
@@ -482,8 +476,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/match/templates/match/message.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
+        <state relative-caret-position="606">
+          <caret line="221" column="10" lean-forward="true" selection-start-line="187" selection-start-column="4" selection-end-line="221" selection-end-column="10" />
         </state>
       </provider>
     </entry>

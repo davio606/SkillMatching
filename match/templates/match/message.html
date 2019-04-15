@@ -186,7 +186,7 @@
 
     </div>
     <div id="inbox" class="tab-pane fade">
-        {% if message_list %}
+
             <ul>
              {% for message in message_list %}
                 {% if message.receiver == user.username %}
@@ -198,13 +198,11 @@
                 {% endif %}
              {% endfor %}
          </ul>
-        {% else %}
-            <p>No messages are available.</p>
-        {% endif %}
+
     </div>
 
     <div id="sent" class="tab-pane fade">
-        {% if message_list %}
+
             <ul>
              {% for message in message_list %}
                 {% if message.sender == user.username %}
@@ -216,9 +214,7 @@
                 {% endif %}
              {% endfor %}
          </ul>
-        {% else %}
-            <p>No messages are available.</p>
-        {% endif %}
+        
     </div>
   </div>
 </div>

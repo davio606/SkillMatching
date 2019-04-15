@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'pytz',
     'datetime',
     'dateutil',
-    'googleapiclient',
+    'google-api-python-client',
     'google_auth_oauthlib',
     'google.auth.transport',
     #'account',

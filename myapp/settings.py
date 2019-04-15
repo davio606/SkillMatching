@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'datetime',
     'dateutil',
     'google-api-python-client',
+    'googleapiclient',
     'google_auth_oauthlib',
     'google.auth.transport',
     #'account',

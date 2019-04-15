@@ -46,6 +46,10 @@ def calendar(request):
     #return HttpResponse("This is the calendar page")
     return render(request, 'match/calendar.html')
 
+def message(request):
+    #return HttpResponse("This is the message page")
+    return render(request, 'match/message.html')
+
 def event(request):
     #SCOPES = ['https://www.googleapis.com/auth/calendar']
     #creds = None

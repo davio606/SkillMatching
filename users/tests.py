@@ -43,6 +43,18 @@ class IndexpageURLRedirectTests(TestCase):
     def test_contact_url(self):
         resolver = resolve('/match/contact/')
         self.assertEqual(resolver.view_name, 'match:contact')
+    
+    def test_email_url(self):
+        resolver = resolve('/match/email/')
+        self.assertEqual(resolver.view_name, 'match:email')
+
+    def test_calendar_url(self):
+        resolver = resolve('/match/calendar/')
+        self.assertEqual(resolver.view_name, 'match:calendar')
+
+    def test_event_url(self):
+        resolver = resolve('/match/event/')
+        self.assertEqual(resolver.view_name, 'match:event')
 
 class HomepageAfterLogin(TestCase):
     def test_to_homepage_after_login(self):

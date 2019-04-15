@@ -124,16 +124,18 @@
     <p style="font-size:20px"><b>Skills:</b> {{ user.profile.skill }}</p>
 
     <p style="..."><b>The number of likes the user has is</b> {{ user.profile.numLikes}}</p>
-    <form method='POST' action="{% url 'like' userId=user.id%}">
-        {% csrf_token %}
-        <button type="submit" style="margin-bottom: 3px;" class="btn btn-success">Like</button>
-    <!--<button type='submit'> Dislike</button>-->
-    </form>
-    <form method='POST' action="{% url 'dislike' userId=user.id%}">
-        {% csrf_token %}
-        <button type="submit" style="margin-bottom: 3px;" class="btn btn-success">Dislike</button>
-    <!--<button type='submit'> Dislike</button>-->
-    </form>
+    <div class=buttons style="display: inline-block"> 
+      <form method='POST' action="{% url 'like' userId=user.id%}">
+          {% csrf_token %}
+          <button type="submit" style="margin-bottom: 3px;" class="btn btn-success">Like</button>
+      <!--<button type='submit'> Dislike</button>-->
+      </form>
+      <form method='POST' action="{% url 'dislike' userId=user.id%}">
+          {% csrf_token %}
+          <button type="submit" style="margin-bottom: 3px;" class="btn btn-success">Dislike</button>
+      <!--<button type='submit'> Dislike</button>-->
+      </form>
+    </div>
 
 
     <a href="#"><i class="fa fa-dribbble"></i></a> 

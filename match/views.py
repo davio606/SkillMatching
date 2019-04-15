@@ -12,14 +12,14 @@ from users.models import profile
 from django.db.models import Q
 from django.core.mail import send_mail
 from django.conf import settings
-from datetime import timedelta
-import datetime
-import dateutil.parser
-from pytz import timezone
-import pytz
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
+#from datetime import timedelta
+#import datetime
+#import dateutil.parser
+#from pytz import timezone
+#import pytz
+#from googleapiclient.discovery import build
+#from google_auth_oauthlib.flow import InstalledAppFlow
+#from google.auth.transport.requests import Request
 
 
 def index(request):
@@ -47,25 +47,25 @@ def calendar(request):
     return render(request, 'match/calendar.html')
 
 def event(request):
-    SCOPES = ['https://www.googleapis.com/auth/calendar']
-    creds = None
-    flow = InstalledAppFlow.from_client_secrets_file(
-        'client_secret.json', SCOPES)
-    creds = flow.run_local_server()
-    service = build('calendar', 'v3', credentials=creds)
+    #SCOPES = ['https://www.googleapis.com/auth/calendar']
+    #creds = None
+    #flow = InstalledAppFlow.from_client_secrets_file(
+    #    'client_secret.json', SCOPES)
+    #creds = flow.run_local_server()
+    #service = build('calendar', 'v3', credentials=creds)
 
-    Summary = request.POST['ename']
-    Description = request.POST['edesc']
-    Date = request.POST['sdate']
-    parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
-    parseDate_plusone = parseDate + timedelta(hours=1)
+    #Summary = request.POST['ename']
+    #Description = request.POST['edesc']
+    #Date = request.POST['sdate']
+    #parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
+    #parseDate_plusone = parseDate + timedelta(hours=1)
 
-    event = service.events().insert(calendarId='primary', body={
-        'summary': Summary,
-        'description': Description,
-        'start': {'dateTime': parseDate.isoformat()},
-        'end': {'dateTime': (parseDate_plusone).isoformat()},
-    }).execute()
+    #event = service.events().insert(calendarId='primary', body={
+    #    'summary': Summary,
+    #    'description': Description,
+    #    'start': {'dateTime': parseDate.isoformat()},
+    #    'end': {'dateTime': (parseDate_plusone).isoformat()},
+    #}).execute()
 
     return render(request, 'match/calendar.html')
 

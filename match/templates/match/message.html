@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style>
+
+    <style>
   .jumbotron {
     background-color: #4CAF50;
     color: #fff;
@@ -141,40 +142,55 @@
   }
 
   </style>
-  </head>
-  <body>
+</body>
 
-  <h2 align="center">Suggestion Form</h2>
-  <form action="{% url 'match:email' %}" method="POST">
-      {% csrf_token %}
-  <div class="sugg-container">
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="fname" placeholder="Your name..">
+<body>
 
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lname" placeholder="Your last name..">
+<div class="container">
+  <h2>Dynamic Pills</h2>
+  <p>To make the tabs toggleable, add the data-toggle="pill" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#compose">Compose</a></li>
+    <li><a data-toggle="pill" href="#inbox">Inbox</a></li>
+    <li><a data-toggle="pill" href="#sent">Sent</a></li>
+  </ul>
 
-      <label for="email">Email Address</label>
-      <input type="text" id="email" name="email" placeholder="Your email..">
+  <div class="tab-content">
+    <div id="compose" class="tab-pane fade in active">
+        <form action="{% url 'match:email' %}" method="POST">
+            {% csrf_token %}
 
-      <label for="user">User</label>
-      <select id="user" name="user">
-        <option value="student">Student</option>
-        <option value="faculty">Faculty</option>
-        <option value="other">Other</option>
-      </select>
+            <div class="sugg-container">
+                <label for="fname">From</label>
+                <input type="text" id="fname" name="fname" placeholder="Sender Name..">
 
-      <label for="subject" name="subject" type="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-      <div style="text-align:center;">
-        <input type="submit" value="Submit" style="margin:0px auto; display:block;">
-      </div>
-  </form>
+                <label for="lname">To</label>
+                <input type="text" id="lname" name="lname" placeholder="Receiver Name..">
+
+                 <label for="email">Subject Line</label>
+                 <input type="text" id="email" name="email" placeholder="Subject Line..">
+
+                 <label for="subject" name="subject" type="subject">Content</label>
+                 <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                 <div style="text-align:center;">
+                     <input type="submit" value="Submit" style="margin:0px auto; display:block;">
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div id="inbox" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="sent" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
   </div>
-
-  </body>
-  </html>
-
+</div>
 
 </body>
+
 </html>
+

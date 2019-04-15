@@ -30,6 +30,8 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('match/', include('match.urls')),
     path('admin/', admin.site.urls),
+    path('myLike/<int:userId>', user_views.like_post, name='like'),
+    path('myDislike/<int:userId>', user_views.dislike_post, name='dislike'),
 ]
 
 if settings.DEBUG:

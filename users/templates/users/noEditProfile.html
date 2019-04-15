@@ -122,6 +122,20 @@
     <p class="major" style="font-size:25px"><b>Major:</b> {{ user.profile.major }}</p>
     <p style="font-size:20px"><b>University of Virginia</b></p>
     <p style="font-size:20px"><b>Skills:</b> {{ user.profile.skill }}</p>
+
+    <p style="..."><b>The number of likes the user has is</b> {{ user.profile.numLikes}}</p>
+    <form method='POST' action="{% url 'like' userId=user.id%}">
+        {% csrf_token %}
+        <button type="submit" style="margin-bottom: 3px;" class="btn btn-success">Like</button>
+    <!--<button type='submit'> Dislike</button>-->
+    </form>
+    <form method='POST' action="{% url 'dislike' userId=user.id%}">
+        {% csrf_token %}
+        <button type="submit" style="margin-bottom: 3px;" class="btn btn-success">Dislike</button>
+    <!--<button type='submit'> Dislike</button>-->
+    </form>
+
+
     <a href="#"><i class="fa fa-dribbble"></i></a> 
     <a href="#"><i class="fa fa-twitter"></i></a> 
     <a href="#"><i class="fa fa-linkedin"></i></a> 

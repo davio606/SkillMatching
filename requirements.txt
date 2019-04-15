@@ -7,3 +7,6 @@ django-crispy-forms
 pinax-teams
 pillow
 python-dateutil
+google-api-pyton-client
+google-auth-oauthlib
+google

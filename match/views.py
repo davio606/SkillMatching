@@ -52,10 +52,11 @@ def message(request):
     #return HttpResponse("This is the message page")
     profiles = profile.objects.all()
     messages = Message.objects.all()
-
+    
     context = {
         'profile_list': profiles,
         'message_list': messages,
+    
     }
 
     return render(request, 'match/message.html',context)
@@ -85,7 +86,7 @@ def event(request):
 
 
 def send(request):
-    m = Message(sender=request.POST['userFrom'], reciever=request.POST['userTo'],message_content=request.POST['content'], subject=request.POST['subject'])
+    m = Message(sender=request.POST['userFrom'], receiver=request.POST['userTo'],message_content=request.POST['content'], subject=request.POST['subject'])
     m.save()
     return render(request, 'match/success.html')
 

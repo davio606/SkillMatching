@@ -169,7 +169,7 @@
                 <label for="userTo">To</label>
                 <select id="userTo" name="userTo">
                     {% for u in profile_list%}
-                        <option value="userTo">{{u.user}}</option>
+                        <option value="{{u.user}}">{{u.user}}</option>
                     {% endfor %}
                 </select>
 
@@ -186,12 +186,23 @@
 
     </div>
     <div id="inbox" class="tab-pane fade">
-        {% for message in message_list %}
-            <li><a>{{"From: "}} {{message.sender}}</a></li>
-            <a>{{ "Subject:"}}{{message.subject}}</a>
-        {% endfor %}
-
+        {% if message_list %}
+            <ul>
+             {% for message in message_list %}
+                {% if message.sender == user.username %}
+                    <li><a>{{"From: "}} {{message.sender}}</a></li>
+                            <a>{{ "Subject:"}}{{message.subject}}</a><br>
+                            <a>{{ "Created Time:"}}{{message.created_at}}</a><br>
+                            <a>{{ "Content:"}}{{message.message_content}}</a>
+                {% else %}
+                {% endif %}
+             {% endfor %}
+         </ul>
+        {% else %}
+            <p>No messages are available.</p>
+        {% endif %}
     </div>
+
     <div id="sent" class="tab-pane fade">
       <h3>Menu 2</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>

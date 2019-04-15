@@ -6,3 +6,9 @@ social-auth-core
 django-crispy-forms
 pinax-teams
 pillow
+dateutil
+datetime
+pytz
+googleapiclient.discovery
+google_auth_oauthlib.flow
+google.auth.transport.requests

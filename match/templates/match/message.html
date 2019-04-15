@@ -157,7 +157,7 @@
 
   <div class="tab-content">
     <div id="compose" class="tab-pane fade in active">
-        <form action="{% url 'match:email' %}" method="POST">
+        <form action="{% url 'match:send' %}" method="POST">
             {% csrf_token %}
 
             <div class="sugg-container">
@@ -173,11 +173,11 @@
                     {% endfor %}
                 </select>
 
-                 <label for="email">Subject Line</label>
-                 <input type="text" id="email" name="email" placeholder="Subject Line..">
+                 <label for="subject">Subject Line</label>
+                 <input type="text" id="subject" name="subject" placeholder="Subject Line..">
 
-                 <label for="subject" name="subject" type="subject">Content</label>
-                 <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                 <label for="content" name="content" type="content">Content</label>
+                 <textarea id="content" name="content" placeholder="Write something.." style="height:200px"></textarea>
                  <div style="text-align:center;">
                      <input type="submit" value="Submit" style="margin:0px auto; display:block;">
                 </div>
@@ -186,8 +186,11 @@
 
     </div>
     <div id="inbox" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        {% for message in message_list %}
+            <li><a>{{"From: "}} {{message.sender}}</a></li>
+            <a>{{ "Subject:"}}{{message.subject}}</a>
+        {% endfor %}
+
     </div>
     <div id="sent" class="tab-pane fade">
       <h3>Menu 2</h3>

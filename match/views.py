@@ -12,6 +12,8 @@ from users.models import profile
 from django.db.models import Q
 from django.core.mail import send_mail
 from django.conf import settings
+
+from .models import Message
 #from datetime import timedelta
 #import datetime
 #import dateutil.parser
@@ -49,10 +51,11 @@ def calendar(request):
 def message(request):
     #return HttpResponse("This is the message page")
     profiles = profile.objects.all()
+    messages = Message.objects.all()
 
     context = {
-        # 'user_list': users,
         'profile_list': profiles,
+        'message_list': messages,
     }
 
     return render(request, 'match/message.html',context)
@@ -79,6 +82,13 @@ def event(request):
     #}).execute()
 
     return render(request, 'match/calendar.html')
+
+
+def send(request):
+    m = Message(sender=request.POST['userFrom'], reciever=request.POST['userTo'],message_content=request.POST['content'], subject=request.POST['subject'])
+    m.save()
+    return render(request, 'match/message.html')
+
 
 def email(request):
     subject = "Suggestion from " + request.POST['fname'] + ' ' + request.POST['lname']

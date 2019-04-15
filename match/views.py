@@ -50,7 +50,7 @@ def event(request):
     SCOPES = ['https://www.googleapis.com/auth/calendar']
     creds = None
     flow = InstalledAppFlow.from_client_secrets_file(
-        'client_secret_847759764898-vqqk35i2rup0o7a0hrpb9raeh1pc75ve.apps.googleusercontent.com.json', SCOPES)
+        'client_secret.json', SCOPES)
     creds = flow.run_local_server()
     service = build('calendar', 'v3', credentials=creds)
 

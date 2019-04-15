@@ -48,7 +48,14 @@ def calendar(request):
 
 def message(request):
     #return HttpResponse("This is the message page")
-    return render(request, 'match/message.html')
+    profiles = profile.objects.all()
+
+    context = {
+        # 'user_list': users,
+        'profile_list': profiles,
+    }
+
+    return render(request, 'match/message.html',context)
 
 def event(request):
     #SCOPES = ['https://www.googleapis.com/auth/calendar']

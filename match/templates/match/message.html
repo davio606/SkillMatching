@@ -161,11 +161,17 @@
             {% csrf_token %}
 
             <div class="sugg-container">
-                <label for="fname">From</label>
-                <input type="text" id="fname" name="fname" placeholder="Sender Name..">
+                <label for="userFrom">From</label>
+                <select id="userFrom" name="userFrom">
+                    <option value="userFrom">{{ user.username }}</option>
+                </select>
 
-                <label for="lname">To</label>
-                <input type="text" id="lname" name="lname" placeholder="Receiver Name..">
+                <label for="userTo">To</label>
+                <select id="userTo" name="userTo">
+                    {% for u in profile_list%}
+                        <option value="userTo">{{u.user}}</option>
+                    {% endfor %}
+                </select>
 
                  <label for="email">Subject Line</label>
                  <input type="text" id="email" name="email" placeholder="Subject Line..">

@@ -8,6 +8,8 @@ class profile(models.Model):
     image = models.ImageField(default='default.jpg',upload_to='profile_pics')
     major = models.CharField(max_length=200)
     skill = models.CharField(max_length=200)
+    likes = models.ManyToManyField(User, related_name='likes', blank=True)
+    numLikes = models.IntegerField(default=0)
 
     def __str__(self):
         return f'{self.user.username} Profile'

@@ -38,3 +38,25 @@ def profile(request):
         'p_form': p_form
     }
     return render(request, 'users/profile.html', context)
+
+def like_post(request, userId):
+    user = get_object_or_404(User, pk=userId)
+    user.profile.numLikes = user.profile.numLikes + 1
+    user.profile.save()
+
+    context = {
+        'user': user,
+    }
+    return render(request, 'users/noEditProfile.html', context)
+
+def dislike_post(request, userId):
+    user = get_object_or_404(User, pk=userId)
+
+    if user.profile.numLikes != 0:
+        user.profile.numLikes = user.profile.numLikes - 1
+        user.profile.save()
+
+    context = {
+        'user': user,
+    }
+    return render(request, 'users/noEditProfile.html', context)

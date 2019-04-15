@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'dateutil',
     'googleapiclient',
     'google_auth_oauthlib',
-    'google',
+    'google.auth.transport',
     #'account',
     #'pinax.invitations',
     #'pinax.teams',

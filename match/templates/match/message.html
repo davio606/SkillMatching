@@ -206,7 +206,7 @@
             <ul>
              {% for message in message_list %}
                 {% if message.sender == user.username %}
-                    <li><a>{{"To: "}} {{message.sender}}</a></li>
+                    <li><a>{{"To: "}} {{message.receiver}}</a></li>
                             <a>{{ "Subject:"}}{{message.subject}}</a><br>
                             <a>{{ "Created Time:"}}{{message.created_at}}</a><br>
                             <a>{{ "Content:"}}{{message.message_content}}</a>
@@ -214,7 +214,7 @@
                 {% endif %}
              {% endfor %}
          </ul>
-        
+
     </div>
   </div>
 </div>

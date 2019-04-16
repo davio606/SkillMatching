@@ -79,7 +79,7 @@ def event(request):
     #Description = request.POST['edesc']
     Date = request.POST['sdate']
     parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
-    #parseDate_plusone = parseDate + timedelta(hours=1)
+    parseDate_plusone = parseDate + timedelta(hours=1)
 
     #event = service.events().insert(calendarId='primary', body={
     #    'summary': Summary,
@@ -89,7 +89,7 @@ def event(request):
     #}).execute()
 
     #return render(request, 'match/calendar.html')
-    return HttpResponse(parseDate)
+    return HttpResponse(parseDate_plusone)
 
 def email(request):
     subject = "Suggestion from " + request.POST['fname'] + ' ' + request.POST['lname']

@@ -125,13 +125,18 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
   <ul class="nav navbar-nav navbar-right">
-    <li><a href="{% url 'profile' %}">PROFILE</a></li>
-    <li><a href="{% url 'logout' %}">SIGN OUT</a></li>
-    <li><a href="/suggest/">SUGGEST</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'logout' %}">SIGN OUT</a></li>
+        <li><a href="{% url 'profile' %}">PROFILE</a></li>
+        <li><a href="/suggest/">SUGGEST</a></li>
+      {% else %}
+        <li><a href="{% url 'login' %}">SIGN IN</a></li>
+        <li><a href="{% url 'register' %}">SIGN UP</a></li>
+      {% endif %}
+      <li><a href="/contact/">CONTACT</a></li>
       <li><a href="/message/">MESSAGE CENTER</a></li>
-    <li><a href="/about/">ABOUT</a></li>
-    <li><a href="/calendar/">CALENDAR</a></li>
-    <li><a href="/contact/">CONTACT</a></li>
+      <li><a href="/calendar/">CALENDAR</a></li>
+      <li><a href="/$/">HOMEPAGE</a></li>
   </ul>
 </div>
 

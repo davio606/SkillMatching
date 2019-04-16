@@ -48,25 +48,53 @@
     border-color: transparent;
     color: #fff !important;
   }
-  .card {
+
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 800px;
+  justify-content: center;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.likeform{
+  float: left; 
+  padding: 10px;
+  margin: 0 auto;
+  margin-left: 630px;
+}
+
+.dislikeform{
+  float: right; 
+  margin-right: 630px; 
+  padding: 10px;
+}
+
+.contact{
+  text-align: center;
+  font-size: 20px;
+}
+
+.card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 10000px;
   margin: auto;
   text-align: center;
   max-height: 10000px;
 }
-.contact {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #4CAF50;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+
+img{
+  border-radius: 50%;
 }
+
   @media screen and (max-width: 768px) {
     .col-sm-4 {
       text-align: center;
@@ -111,35 +139,61 @@
 <div class="jumbotron text-center">
   <h1>Contact: {{ user.username }}</h1>
 </div>
-
-<div class="card">
+<div class="card" style="text-align: center;"> 
+    <img align="center" src="{{user.profile.image.url}}" alt="avatar" width="300" height="300">
     <h2>{{ user.email }}</h2>
-    <img src="{{user.profile.image.url}}" alt="avatar" width="300" height="300">
-    <p class="major" style="font-size:25px"><b>Major:</b> {{ user.profile.major }}</p>
-    <p style="font-size:20px"><b>University of Virginia</b></p>
-    <p style="font-size:20px"><b>Skills:</b> {{ user.profile.skill }}</p>
+    <table align="center" style="margin-top: 10px;">
+        <tr>
+          <td>Email:</td>
+          <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+          <td>Major:</td>
+          <td>{{ user.profile.major }}</td>
+        </tr>
+        <tr>
+          <td>School:</td>
+          <td>University of Virginia</td>
+        </tr>
+        <tr>
+          <td>Skills:</td>
+          <td>{{ user.profile.skill }}</td>
+        </tr>
+        <tr>
+          <td>Number of likes:</td>
+          <td>{{ user.profile.numLikes}}</td>
+        </tr>
+      </table>
+      
+        <div class="likebuttons">
+            <form class="likeform" method='POST' action="{% url 'like' userId=user.id%}">
+                {% csrf_token %}
+                <button type="submit" style="background-color: red; width: 70px; text-align: center" class="btn btn-success">Like</button>
+            <!--<button type='submit'> Dislike</button>-->
+            </form>
+            <form class="dislikeform" method='POST' action="{% url 'dislike' userId=user.id%}">
+                {% csrf_token %}
+                <button type="submit" style="background-color: green; width: 70px; text-align: center" class="btn btn-success">Dislike</button>
+            <!--<button type='submit'> Dislike</button>-->
+            </form>
 
-    <p style="..."><b>The number of likes the user has is</b> {{ user.profile.numLikes}}</p>
-    <div class=buttons style="display: inline-block"> 
-      <form method='POST' action="{% url 'like' userId=user.id%}">
-          {% csrf_token %}
-          <button type="submit" style="margin-bottom: 3px;" class="btn btn-success">Like</button>
-      <!--<button type='submit'> Dislike</button>-->
-      </form>
-      <form method='POST' action="{% url 'dislike' userId=user.id%}">
-          {% csrf_token %}
-          <button type="submit" style="margin-bottom: 3px;" class="btn btn-success">Dislike</button>
-      <!--<button type='submit'> Dislike</button>-->
-      </form>
-    </div>
+      
+        </div>
+          <a href="#" style="background-color: black"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a> 
+          <a href="#"><i class="fa fa-linkedin"></i></a> 
+          <a href="#"><i class="fa fa-facebook"></i></a> 
+
+          <form class="contact" action="mailto:{{user.email}}" method="POST">
+              <button class="btn btn-success" type="submit" name="contact" type="text" style="background-color: #4CAF50; color: white; font-size: 20px; width: 300px;">Contact this user</button>
+          </form>
+      </div>
+      
+        
+</div>
 
 
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a> 
-    <a href="#"><i class="fa fa-linkedin"></i></a> 
-    <a href="#"><i class="fa fa-facebook"></i></a> 
-    <p class="contact"> <a href="mailto:{{user.email}}" style="color: white"> Contact </a></p>
-  </div>
+
   
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

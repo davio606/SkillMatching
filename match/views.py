@@ -15,11 +15,11 @@ from django.conf import settings
 
 
 from .models import Message
-#from datetime import timedelta
-#import datetime
-#import dateutil.parser
-#from pytz import timezone
-#import pytz
+from datetime import timedelta
+import datetime
+import dateutil.parser
+from pytz import timezone
+import pytz
 #from googleapiclient.discovery import build
 #from google_auth_oauthlib.flow import InstalledAppFlow
 #from google.auth.transport.requests import Request
@@ -77,8 +77,8 @@ def event(request):
 
     #Summary = request.POST['ename']
     #Description = request.POST['edesc']
-    #Date = request.POST['sdate']
-    #parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
+    Date = request.POST['sdate']
+    parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
     #parseDate_plusone = parseDate + timedelta(hours=1)
 
     #event = service.events().insert(calendarId='primary', body={
@@ -88,7 +88,8 @@ def event(request):
     #    'end': {'dateTime': (parseDate_plusone).isoformat()},
     #}).execute()
 
-    return render(request, 'match/calendar.html')
+    #return render(request, 'match/calendar.html')
+    return HttpResponse(parseDate)
 
 def email(request):
     subject = "Suggestion from " + request.POST['fname'] + ' ' + request.POST['lname']

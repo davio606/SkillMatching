@@ -5,3 +5,5 @@ social-auth-core
 django-crispy-forms
 pinax-teams
 pillow
+python-dateutil
+pytz

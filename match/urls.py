@@ -22,6 +22,8 @@ urlpatterns = [
     path('email/', views.email, name='email'),
     path('calendar/', views.calendar, name='calendar'),
     path('event/', views.event, name='event')
+    path('message/', views.message, name='message'),
+    path('message/send', views.send, name='send'),
 ] 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

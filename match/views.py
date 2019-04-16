@@ -12,14 +12,17 @@ from users.models import profile
 from django.db.models import Q
 from django.core.mail import send_mail
 from django.conf import settings
-#from datetime import timedelta
-#import datetime
-#import dateutil.parser
-#from pytz import timezone
-#import pytz
-#from googleapiclient.discovery import build
-#from google_auth_oauthlib.flow import InstalledAppFlow
-#from google.auth.transport.requests import Request
+
+
+from .models import Message
+from datetime import timedelta
+import datetime
+import dateutil.parser
+from pytz import timezone
+import pytz
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
 
 
 def index(request):
@@ -42,32 +45,51 @@ def suggest(request):
     #return HttpResponse("This is the suggest page")
     return render(request, 'match/suggest.html')
 
+
+def message(request):
+    # return HttpResponse("This is the message page")
+    profiles = profile.objects.all()
+    messages = Message.objects.all()
+
+    context = {
+        'profile_list': profiles,
+        'message_list': messages,
+    }
+
+    return render(request, 'match/message.html', context)
+
+def send(request):
+    m = Message(sender=request.POST['userFrom'], receiver=request.POST['userTo'],message_content=request.POST['content'], subject=request.POST['subject'])
+    m.save()
+    return render(request, 'match/success.html')
+
 def calendar(request):
     #return HttpResponse("This is the calendar page")
     return render(request, 'match/calendar.html')
 
 def event(request):
-    #SCOPES = ['https://www.googleapis.com/auth/calendar']
-    #creds = None
-    #flow = InstalledAppFlow.from_client_secrets_file(
-    #    'client_secret.json', SCOPES)
-    #creds = flow.run_local_server()
-    #service = build('calendar', 'v3', credentials=creds)
+    SCOPES = ['https://www.googleapis.com/auth/calendar']
+    creds = None
+    flow = InstalledAppFlow.from_client_secrets_file(
+        'client_secret_847759764898-vqqk35i2rup0o7a0hrpb9raeh1pc75ve.apps.googleusercontent.com.json', SCOPES)
+    creds = flow.run_local_server()
+    service = build('calendar', 'v3', credentials=creds)
 
-    #Summary = request.POST['ename']
-    #Description = request.POST['edesc']
-    #Date = request.POST['sdate']
-    #parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
-    #parseDate_plusone = parseDate + timedelta(hours=1)
+    Summary = request.POST['ename']
+    Description = request.POST['edesc']
+    Date = request.POST['sdate']
+    parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
+    parseDate_plusone = parseDate + timedelta(hours=1)
 
-    #event = service.events().insert(calendarId='primary', body={
-    #    'summary': Summary,
-    #    'description': Description,
-    #    'start': {'dateTime': parseDate.isoformat()},
-    #    'end': {'dateTime': (parseDate_plusone).isoformat()},
-    #}).execute()
+    event = service.events().insert(calendarId='primary', body={
+        'summary': Summary,
+        'description': Description,
+        'start': {'dateTime': parseDate.isoformat()},
+        'end': {'dateTime': (parseDate_plusone).isoformat()},
+    }).execute()
 
     return render(request, 'match/calendar.html')
+    #return HttpResponse(parseDate_plusone)
 
 def email(request):
     subject = "Suggestion from " + request.POST['fname'] + ' ' + request.POST['lname']

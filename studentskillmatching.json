@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "studentskillmatching",
+  "private_key_id": "1b19c6aa48b00681bc02d90433ed6f58f583a2e0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCmWPjR7GuefXVF\n8OwtLvkkoEX4SYYqMYLVUjcf/U6o5eYG/6AWvaoU/pQu3LNsy6ZwbjAiKdUD4qMW\n+tpblxdrva9uJuADbyQfP65OP/4OUO5+8IjGxWZ6VksW/M3S9i6l1mVtxxU0/iBP\neEufCOfSydkdaPRXC3xgqPLmWhpyf7f6gRViflSaiDC56HxUWjifF6lkDdswZHwN\nD5zgvU65Fo06f6tVdFmcvYy1A6bT1TV0vcygl8loxCXIBOTfQ7p2NWT59OEAIe+f\nmSK0grBbgSeNtKXbhoCNtWnVq97N1/Tk3vC+LaUXFsodc/E/1kMEThXiKb4SqHUI\n0PRrqrPhAgMBAAECggEARbAtYUiB125otGnXj6BHqNPqLDelGMUQMg0U4fZtPy28\n/b6WkyBXAh+a9bzpABGbAyvuR0muH0gRmf1yf/9exPi851Eq9NVZVSwI+mgtp1K5\nb32WV2t4YJUJNTKoiZIv/bLBYEmQdVhnMdPMHm6NLA36wqrm/hZmP1pYFC+4N7Hj\nohAP6UnqwYwrYtyfqr4VagpnlwIkFvBSQZsfqG370jxwQlJWpwUnd2YsBJHTXhqD\nz3P8hm5sEmcl9LTech26G8sQJJvxlDu/ZWrNoloNLrYLIAf1yI/333fYtlKI6X0/\n8/x+ysa7gVU5pQ/AiQf03ryeRi/nhNAQEvcStGytNwKBgQDbzmm9moffErARy5W2\nBRRQGWFx7No+rIay8Axs9hGOidtDl/EqrKUJ9Nuq3/zGwFzszO8aBz/RgVkt2R0M\nxpXiYmR1ZUB8IEgKdWKGaTPaXjHShxv7Bu9S2JlsXIt8NqglF+cEmo98NAx4SRuw\n2pHSU9dIXydH+Q8QAKGVe5oo6wKBgQDBvRb0yHQvmE+5AhACMzpwJpHN9WzvfrE4\nB5+4EpAmGIGSxq136iaar9zQs4zDA2QzSOc02pg/zeoGlmgl6CUmRRCbSxlKCt1+\nO9a9JE2dNk1EssyWCFslOks6ug2ZcJjeJyz6o+6pfD+X8wSAOLsAsd4Sl30O8c/q\nCCRHNS5jYwKBgQCqvrw7MfhL27t0B16Dp4xw8FZW5jNerixwgbJVTgyzWfk+l6Aa\nk0Qc6N1e7mHwjmtg84zk/i6f80ewKtC7JOQ3mFELNJ0UDwuHPEpNuRkzjypKrPOa\nW3e7NlBv8a/UzKxvLBMj62B8jf4Fzly5VAAkj0ZTjL751MnTl3ntobdOAwKBgF/0\nUklcescT7fBYyCr+ymO/hpl2g8S+f/GbPQ0DDKgBnTNf+YyZyRL2JSyssPvpUxhf\ndDvmRF/dkZo/pkeYCcZBkK8Ja/YTGY6q/nlhYJuLyItM7y0j6Fiw3Y+xlIi5js0A\npDNjPBJvemO8ti73ag83CSE2LHdZZrun2qf1/Aq3AoGAYlAK+OzVNFSAIhiBE7Es\nkQIvmCcTCBSZABjgTCf+swYWXbVUkqNIeyQ4OA+1W6nEUVJEuvdb/9z0Yk598KTN\nrBy7YAQ/Zj87T6+gpmS/rJ2/DWgTihzQ0OSiPIOpphOh+M1hLcCqdrMqG6VrO2tV\nvNKbug5jdi4SICMx7xJP9u8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "segfaultstrategists@studentskillmatching.iam.gserviceaccount.com",
+  "client_id": "115152905332398529323",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/segfaultstrategists%40studentskillmatching.iam.gserviceaccount.com"
+}

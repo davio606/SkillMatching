@@ -67,21 +67,21 @@ tr:nth-child(even) {
 }
 
 .likeform{
-  float: left; 
-  padding: 10px;
-  margin: 0 auto;
-  margin-left: 630px;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
 }
 
 .dislikeform{
-  float: right; 
-  margin-right: 630px; 
-  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
 }
 
 .contact{
   text-align: center;
   font-size: 20px;
+  padding: 5px;
 }
 
 .card {
@@ -167,12 +167,12 @@ img{
         <div class="likebuttons">
             <form class="likeform" method='POST' action="{% url 'like' userId=user.id%}">
                 {% csrf_token %}
-                <button type="submit" style="background-color: red; width: 70px; text-align: center" class="btn btn-success">Like</button>
+                <button type="submit" style="background-color: green; width: 70px; text-align: center" class="btn btn-success">Like</button>
             <!--<button type='submit'> Dislike</button>-->
             </form>
             <form class="dislikeform" method='POST' action="{% url 'dislike' userId=user.id%}">
                 {% csrf_token %}
-                <button type="submit" style="background-color: green; width: 70px; text-align: center" class="btn btn-success">Dislike</button>
+                <button type="submit" style="background-color: red; width: 70px; text-align: center" class="btn btn-success">Dislike</button>
             <!--<button type='submit'> Dislike</button>-->
             </form>
 

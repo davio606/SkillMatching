@@ -48,8 +48,6 @@ class IndexpageURLRedirectTests(TestCase):
         resolver = resolve('/match/email/')
         self.assertEqual(resolver.view_name, 'match:email')
 
-
-
     def test_calendar_url(self):
         resolver = resolve('/match/calendar/')
         self.assertEqual(resolver.view_name, 'match:calendar')

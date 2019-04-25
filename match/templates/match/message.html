@@ -12,7 +12,7 @@
   .jumbotron {
     background-color: #4CAF50;
     color: #fff;
-    padding: 100px 25px;
+    padding: 40px 25px;
   }
   .container-fluid {
     padding: 60px 50px;
@@ -90,8 +90,8 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Help Grasp Grow</h1>
-  <p>We value your feedback</p>
+  <h1>Message Center</h1>
+  <p>Send messages to your study buddies</p>
 </div>
 
 <style>
@@ -134,6 +134,42 @@
     border: none;
     background-color: #4CAF50
   }
+
+  .inbox-list {
+    font: 400 15px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+   
+  .inbox-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+   
+  .inbox-list li:last-child {
+    border: none;
+  }
+   
+  .inbox-list li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 5000px;
+    white-space: nowrap;
+   
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+  }
+   
+  .inbox-list li a:hover {
+    font-size: 18px;
+    background: #f6f6f6;
+  }
   </style>
 </body>
 
@@ -141,7 +177,7 @@
 
 <div class="container">
   <h2>Welcome to your personal inbox!</h2>
-  <p>Here you can compose new message, check incoming messages and messages that you sent.</p>
+  <p>Here you can compose a new message, check incoming messages, and messages that you sent.</p>
   <ul class="nav nav-pills">
     <li class="active"><a data-toggle="pill" href="#compose">Compose</a></li>
     <li><a data-toggle="pill" href="#inbox">Inbox</a></li>
@@ -179,14 +215,16 @@
 
     </div>
     <div id="inbox" class="tab-pane fade">
-
-            <ul>
+      <div id="inbox-list" style="padding-left: 10px;">
+        <u1 class="inbox-list" style="list-style-type:circle;">
              {% for message in message_list %}
                 {% if message.receiver == user.username %}
-                    <li><a>{{"From: "}} {{message.sender}}</a></li>
-                            <a>{{ "Subject:"}}{{message.subject}}</a><br>
-                            <a>{{ "Created Time:"}}{{message.created_at}}</a><br>
-                            <a>{{ "Content:"}}{{message.message_content}}</a>
+                <li class="inbox-list">
+                    <a href="#">
+                        <b>{{"From: "}}</b>{{message.sender}}<br>
+                        <b>{{"Subject: "}}</b>{{message.subject}}<br>
+                        <b>{{ "Created Time: "}}</b>{{message.created_at}}<br>
+                        <b>{{"Content: "}}</b>{{message.message_content}}</a></li>
                 {% else %}
                 {% endif %}
              {% endfor %}
@@ -195,14 +233,16 @@
     </div>
 
     <div id="sent" class="tab-pane fade">
-
-            <ul>
+        <div id="inbox-list" style="padding-left: 10px; padding-bottom: 50px;">
+            <u1 class="inbox-list" style="list-style-type:circle;">
              {% for message in message_list %}
                 {% if message.sender == user.username %}
-                    <li><a>{{"To: "}} {{message.receiver}}</a></li>
-                            <a>{{ "Subject:"}}{{message.subject}}</a><br>
-                            <a>{{ "Created Time:"}}{{message.created_at}}</a><br>
-                            <a>{{ "Content:"}}{{message.message_content}}</a>
+                <li class="inbox-list">
+                    <a href="#">
+                        <b>{{"To: "}}</b> {{message.receiver}}<br>
+                        <b>{{"Subject: "}}</b>{{message.subject}}<br>
+                        <b>{{ "Created Time: "}}</b>{{message.created_at}}<br>
+                        <b>{{ "Content: "}}</b>{{message.message_content}}</a></li>
                 {% else %}
                 {% endif %}
              {% endfor %}

@@ -144,7 +144,6 @@ html, body {
 <div class="jumbotron text-center">
   <h1>Grasp</h1>
   <p>We specialize in study buddying</p>
-  <p>You are logged in.</p>
   {% if messages %}
     {% for message in messages %}
       <div class="alert alert-{{ message.tags}}">
@@ -175,8 +174,8 @@ html, body {
       {% for u in profile_list %}
       <li class = "user-list">
         <a href="{% url 'match:choose' u.user.id %}">
-          <span class="user-list" style="font-size:25px">
-            <img src="{{ u.image.url }}" width="60" height="60"/>
+          <span class="user-list" style="font-size:20px">
+            <img src="{{ u.image.url }}" width="45" height="45"/>
               {{u.user}}<br/>
           </span>
           <span class="user-list" style="font-size:15px">

@@ -23,8 +23,6 @@ import pytz
 from googleapiclient.discovery import build
 import httplib2
 from oauth2client.service_account import ServiceAccountCredentials
-#from google_auth_oauthlib.flow import InstalledAppFlow
-#from google.auth.transport.requests import Request
 service_account_email = 'segfaultstrategists@studentskillmatching.iam.gserviceaccount.com'
 CLIENT_SECRET_FILE = 'studentskillmatching.json'
 
@@ -73,20 +71,20 @@ def calendar(request):
 
 def event(request):
     SCOPES = ['https://www.googleapis.com/auth/calendar']
-    #creds = None
-    #flow = InstalledAppFlow.from_client_secrets_file(
-    #    'client_secret_847759764898-vqqk35i2rup0o7a0hrpb9raeh1pc75ve.apps.googleusercontent.com.json', SCOPES)
-    #creds = flow.run_local_server()
-    #service = build('calendar', 'v3', credentials=creds)
     creds = ServiceAccountCredentials.from_json_keyfile_name(filename=CLIENT_SECRET_FILE, scopes=SCOPES)
     http = creds.authorize(httplib2.Http())
     service = build('calendar', 'v3', http=http)
 
     Summary = request.POST['ename']
     Description = request.POST['edesc']
-    Date = request.POST['sdate']
-    parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
-    parseDate_plusone = parseDate + timedelta(hours=1)
+    if(request.POST['sdate']):
+        Date = request.POST['sdate']
+        parseDate = timezone('US/Eastern').localize(dateutil.parser.parse(Date))
+        parseDate_plusone = parseDate + timedelta(hours=1)
+    else:
+        Date = datetime.datetime.now(tz=pytz.utc).isoformat()
+        parseDate = dateutil.parser.parse(Date)
+        parseDate_plusone = parseDate + timedelta(hours=1)
 
     event = service.events().insert(calendarId='studentskillmatching@gmail.com', body={
         'summary': Summary,

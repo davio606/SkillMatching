@@ -11,6 +11,7 @@ from . import views
 app_name = 'match'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('index/', views.index, name='index2'),
     path('signup/', views.signup, name='signup'),
    #path('login/', views.login, name='login2'),
     path('auth/', include('social_django.urls'), name='social'), 

@@ -48,6 +48,7 @@ def suggest(request):
     return render(request, 'match/suggest.html')
 
 
+
 def message(request):
     # return HttpResponse("This is the message page")
     profiles = profile.objects.all()

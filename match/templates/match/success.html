@@ -85,8 +85,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
   <ul class="nav navbar-nav navbar-right">
     {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">SIGN OUT</a></li>
       <li><a href="{% url 'profile' %}">PROFILE</a></li>
-      <li><a href="{% url 'logout' %}">SIGN OUT</a></li>
          <li><a href="/suggest/">SUGGEST</a></li>
     {% else %}
       <li><a href="{% url 'login' %}">SIGN IN</a></li>
@@ -104,7 +104,8 @@
 
 <div class="jumbotron text-center">
   <h1>Congratulations!</h1>
-  <p>Your message sent successfully!</p>
+  <p>Your message sent successfully. You can click Message Center in the navigation bar to go back. </p>
+    <img src="{{'https://cdn.pixabay.com/photo/2017/05/31/23/44/email-marketing-2362038_1280.png'}}" width="1340" height="509"/>
 </div>
 
 

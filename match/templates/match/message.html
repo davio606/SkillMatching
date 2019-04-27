@@ -190,10 +190,7 @@
             {% csrf_token %}
 
             <div class="sugg-container">
-                <label for="userFrom">From</label>
-                <select id="userFrom" name="userFrom">
-                    <option value="{{ user.username }}">{{ user.username }}</option>
-                </select>
+                <input type="hidden" id="userFrom" name="userFrom" value="{{ user.username }}">
 
                 <label for="userTo">To</label>
                 <select id="userTo" name="userTo">

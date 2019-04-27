@@ -190,10 +190,7 @@
             {% csrf_token %}
 
             <div class="sugg-container">
-                <label for="userFrom">From</label>
-                <select id="userFrom" name="userFrom">
-                    <option value="{{ user.username }}">{{ user.username }}</option>
-                </select>
+                <input type="hidden" id="userFrom" name="userFrom" value="{{ user.username }}">
 
                 <label for="userTo">To</label>
                 <select id="userTo" name="userTo">
@@ -216,11 +213,11 @@
     </div>
     <div id="inbox" class="tab-pane fade">
       <div id="inbox-list" style="padding-left: 10px;">
-        <u1 class="inbox-list" style="list-style-type:circle;">
+        <ul class="inbox-list" style="list-style-type:circle;">
              {% for message in message_list %}
                 {% if message.receiver == user.username %}
-                <li class="inbox-list">
-                    <a href="#">
+                    <li class="inbox-list">
+                         <a href="#">
                         <b>{{"From: "}}</b>{{message.sender}}<br>
                         <b>{{"Subject: "}}</b>{{message.subject}}<br>
                         <b>{{ "Created Time: "}}</b>{{message.created_at}}<br>
@@ -229,12 +226,12 @@
                 {% endif %}
              {% endfor %}
          </ul>
-
+      </div>
     </div>
 
     <div id="sent" class="tab-pane fade">
         <div id="inbox-list" style="padding-left: 10px; padding-bottom: 50px;">
-            <u1 class="inbox-list" style="list-style-type:circle;">
+            <ul class="inbox-list" style="list-style-type:circle;">
              {% for message in message_list %}
                 {% if message.sender == user.username %}
                 <li class="inbox-list">
@@ -246,12 +243,13 @@
                 {% else %}
                 {% endif %}
              {% endfor %}
-         </ul>
-
+            </ul>
+        </div>
     </div>
+
+
   </div>
 </div>
-
 </body>
 
 </html>

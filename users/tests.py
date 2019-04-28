@@ -7,15 +7,6 @@ from django.urls import resolve
 # Create your tests here.
 #import pytest
 
-class LoginTests(TestCase):
-
-    def test_login(self):
-        #e = User.objects.all()
-        #u = User(username="test1")
-        #self.assertIs(User.objects.filter(id="test1").exists(), True)
-        self.assertIs(True, True)
-
-
 class IndexpageURLRedirectTests(TestCase):
 
     def test_homepage_url(self):
@@ -76,6 +67,23 @@ class HomepageAfterLogin(TestCase):
     def test_contact_url(self):
         resolver = resolve('/contact/')
         self.assertEqual(resolver.view_name, 'match:contact')
+class ProfileTestCase(TestCase):
+    def setUp(self):
+        User.objects.create_user(username="test", email="test@virginia.edu", password="test123")
+    def test_username(self):
+        a = User.objects.get_by_natural_key(username="test")
+        self.assertEqual(a.username, "test")
+    def test_major(self):
+        a = User.objects.get_by_natural_key(username="test")
+        a.profile.major = "Computer Science"
+        self.assertEqual(a.profile.major, "Computer Science")
+    def test_skills(self):
+        a = User.objects.get_by_natural_key(username="test")
+        a.profile.skills = "Java, C++"
+        self.assertEqual(a.profile.skills, "Java, C++")
+    def test_email(self):
+        a = User.objects.get_by_natural_key(username="test")
+        self.assertEqual(a.email, "test@virginia.edu")
 
 
 

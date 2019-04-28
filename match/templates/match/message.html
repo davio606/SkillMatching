@@ -57,6 +57,7 @@
       margin: 25px 0;
     }
   }
+
   </style>
 </head>
 <body>
@@ -95,6 +96,7 @@
   <h1>Message Center</h1>
   <p>Send messages to your study buddies</p>
 </div>
+</body>
 
 <style>
   .sugg-container body {font-family: Arial, Helvetica, sans-serif;}
@@ -172,8 +174,16 @@
     font-size: 18px;
     background: #f6f6f6;
   }
+
+    div.b {
+
+        width: 1000px;
+        word-break: break-word;
+         white-space: normal;
+      display: inline-block;
+    }
+
   </style>
-</body>
 
 <body>
 
@@ -234,7 +244,8 @@
 
                         <b>{{"Subject: "}}</b>{{message.subject}}<br>
                         <b>{{ "Time: "}}</b>{{message.created_at}}<br>
-                        <b>{{"Content: "}}</b>{{message.message_content}}</a></li>
+                        <b>{{ "Content: "}}</b> <br>
+                        <div class="b">{{message.message_content}}</div></a></li>
                         <hr>
                 {% else %}
                 {% endif %}
@@ -262,10 +273,10 @@
                              {% else %}
                              {% endif %}
                         {% endfor %}
-
                         <b>{{"Subject: "}}</b>{{message.subject}}<br>
                         <b>{{ "Time: "}}</b>{{message.created_at}}<br>
-                        <b>{{ "Content: "}}</b>{{message.message_content}}</a></li>
+                        <b>{{ "Content: "}}</b> <br>
+                        <div class="b">{{message.message_content}}</div></a></li>
                         <hr>
                 {% else %}
                 {% endif %}
@@ -273,7 +284,6 @@
             </ul>
         </div>
     </div>
-
 
   </div>
 </div>

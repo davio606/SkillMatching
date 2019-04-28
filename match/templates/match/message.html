@@ -220,10 +220,22 @@
                 {% if message.receiver == user.username %}
                     <li class="inbox-list">
                          <a href="#">
-                        <b>{{"From: "}}</b>{{message.sender}}<br>
+                             {% for u in profile_list %}
+                                {% if u.user.username   ==  message.sender %}
+
+                                    <span class="user-list" style="font-size:25px">
+                                     <img src="{{u.image.url}}" width="60" height="60"/>
+                                        {{u.user}}<br/>
+                                    </span>
+
+                                {% else %}
+                                {% endif %}
+                            {% endfor %}
+
                         <b>{{"Subject: "}}</b>{{message.subject}}<br>
-                        <b>{{ "Created Time: "}}</b>{{message.created_at}}<br>
+                        <b>{{ "Time: "}}</b>{{message.created_at}}<br>
                         <b>{{"Content: "}}</b>{{message.message_content}}</a></li>
+                        <hr>
                 {% else %}
                 {% endif %}
              {% endfor %}
@@ -238,10 +250,23 @@
                 {% if message.sender == user.username %}
                 <li class="inbox-list">
                     <a href="#">
-                        <b>{{"To: "}}</b> {{message.receiver}}<br>
+                        {% for u in profile_list %}
+
+                             {% if u.user.username   ==  message.receiver %}
+
+                                    <span class="user-list" style="font-size:25px">
+                                     <img src="{{u.image.url}}" width="60" height="60"/>
+                                        {{u.user}}<br/>
+                                    </span>
+
+                             {% else %}
+                             {% endif %}
+                        {% endfor %}
+
                         <b>{{"Subject: "}}</b>{{message.subject}}<br>
-                        <b>{{ "Created Time: "}}</b>{{message.created_at}}<br>
+                        <b>{{ "Time: "}}</b>{{message.created_at}}<br>
                         <b>{{ "Content: "}}</b>{{message.message_content}}</a></li>
+                        <hr>
                 {% else %}
                 {% endif %}
              {% endfor %}

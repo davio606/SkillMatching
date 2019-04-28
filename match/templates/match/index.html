@@ -96,7 +96,7 @@
         <li><a href="{% url 'profile' %}">PROFILE</a></li>
       {% else %}
         <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">SIGN IN</a></li>
-        <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">SIGN UP</a></li>
+        <li><a href="{% url 'register' %}">SIGN UP</a></li>
       {% endif %}
         <li><a href="/suggest/">SUGGEST</a></li>
       <li><a href="/contact/">CONTACT</a></li>

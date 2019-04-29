@@ -101,6 +101,7 @@ DATABASES = {
 }
 
 LOGIN_URL = '/match' 
+LOGOUT_REDIRECT_URL = 'match:index'
 SOCIAL_AUTH_URL_NAMESPACE = 'match:social'
 LOGIN_REDIRECT_URL = 'match:home'
 

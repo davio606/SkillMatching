@@ -3,6 +3,7 @@ from django.conf.urls import url, include
 from django.conf import settings
 from django.contrib.auth import views
 from django.conf.urls.static import static
+from django.contrib.auth.views import LoginView, LogoutView
 from .views import home
 
 
@@ -10,6 +11,7 @@ from . import views
 
 app_name = 'match'
 urlpatterns = [
+    path('logout/', LogoutView.as_view(), name='logout'),
     path('', views.index, name='index'),
     path('index/', views.index, name='index2'),
    #path('login/', views.login, name='login2'),

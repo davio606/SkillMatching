@@ -14,9 +14,19 @@ Password: helloworld!
 
 /login/ was made specifically for the use of Professor Sherriff
 
+After you login, you will be sent to the homepage that is only accessible for authenticated users, if you wish to look at the homepage for non-authenticated users (people that are not signed in), just click this [http://student-skill-matching.herokuapp.com/]. 
+
+The profile tab is where you can edit your own profile. We also have a suggestion box page where users can submit a suggestion that goes to our master email (this master email is also used for the google calendars feature that we implemented in our calendars page). The email access is:
+
+Email: studentskillmatching@gmail.com
+
+Password: segfaultstrategists
+
+If you would like to test the messaging feature, you can message yourself, as this has the same functionality as messaging someone else. 
+
 ## Install 
 
-* git clone https://github.com/UVA-CS3240-S19/project-102-segfault-strategists.git 
+git clone https://github.com/UVA-CS3240-S19/project-102-segfault-strategists.git 
 
 Make sure to pip install all requirements from requirements.txt
 

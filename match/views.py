@@ -89,6 +89,7 @@ def event(request):
     return render(request, 'match/calendar.html')
     #return HttpResponse(parseDate_plusone)
 
+@login_required
 def email(request):
     subject = "Suggestion from " + request.POST['fname'] + ' ' + request.POST['lname']
     message = 'From: ' + request.POST['email'] + '\n \n' + "Message: " + request.POST['subject']

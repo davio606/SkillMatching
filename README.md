@@ -1,5 +1,6 @@
 myapp
 TODO List:
+-tell vismita about names
 -Create Login Redirect page
 -README for Sherriff
 -UI Fix for NOedit profile

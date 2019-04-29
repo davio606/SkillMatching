@@ -2,6 +2,17 @@ from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
 
+#**************************************************************************************
+#  REFERENCES
+#  Title: <code_snippets/django tutorial>
+#  Author: Corey Schafer
+#  Date: Last Updated March 18 2017
+#  Availability: https://github.com/CoreyMSchafer/code_snippets
+#  Used for User Profile creation 
+# Title: ....
+#
+#***************************************************************************************
+
 #User and Profile have one to one relation. If a user is deleted, then profile is deleted
 class profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

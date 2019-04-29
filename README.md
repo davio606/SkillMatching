@@ -7,13 +7,16 @@ See working version at [http://student-skill-matching.herokuapp.com/]
 
 ## For Sherriff Only:
 Go to [http://student-skill-matching.herokuapp.com/login/]. 
+
 Username: Sherriff 
+
 Password: helloworld!
+
 /login/ was made specifically for the use of Professor Sherriff
 
 ## Install 
 
-* `git clone https://github.com/UVA-CS3240-S19/project-102-segfault-strategists.git
+* git clone https://github.com/UVA-CS3240-S19/project-102-segfault-strategists.git 
 
 Make sure to pip install all requirements from requirements.txt
 
@@ -34,18 +37,3 @@ Grasp allows users to message others in a convenient manner. Users can compose a
 ### Joint Calendar System
 Grasp allows users to notify others of group events on a joint calendar. Simply type in the name of the event, a description, the date, and time.
 
-TODO List:
--Create Login Redirect page
--List References
-
-/***************************************************************************************
-*  REFERENCES
-*  Title: <title of program/source code>
-*  Author: <author(s) names>
-*  Date: <date>
-*  Code version: <code version>
-*  Availability: <where it's located>
-*
-*  Title: ....
-*
-***************************************************************************************/

@@ -234,7 +234,7 @@
 
                                     <span class="user-list" style="font-size:25px">
                                      <img src="{{u.image.url}}" width="60" height="60"/>
-                                        {{u.user}}<br/>
+                                        {{u.user.get_full_name }}<br/>
                                     </span>
 
                                 {% else %}
@@ -266,7 +266,7 @@
 
                                     <span class="user-list" style="font-size:25px">
                                      <img src="{{u.image.url}}" width="60" height="60"/>
-                                        {{u.user}}<br/>
+                                        {{u.user.get_full_name }}<br/>
                                     </span>
 
                              {% else %}

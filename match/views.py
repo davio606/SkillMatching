@@ -103,6 +103,7 @@ def contact(request):
     #return HttpResponse("This is the contact page")
     return render(request, 'match/contact.html')
 
+@login_required
 def choose(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     if request.method == 'POST':

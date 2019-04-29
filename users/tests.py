@@ -19,14 +19,6 @@ class IndexpageURLRedirectTests(TestCase):
         resolver = resolve('/login/')
         self.assertEqual(resolver.view_name, 'login')
 
-    def test_signup_url(self):
-        resolver = resolve('/register/')
-        self.assertEqual(resolver.view_name, 'register')
-
-    def test_about_url(self):
-        resolver = resolve('/match/about/')
-        self.assertEqual(resolver.view_name, 'match:about')
-
     def test_suggest_url(self):
         resolver = resolve('/match/suggest/')
         self.assertEqual(resolver.view_name, 'match:suggest')

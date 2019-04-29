@@ -17,8 +17,8 @@
   
   <style>
   .jumbotron {
-      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAB7CAMAAAB6t7bCAAAADFBMVEWLNbD6aUSBMLb/bDicSfWEAAABNklEQVR4nO3RgQkAIRDAMH3339klhA9HM0K71iDf2YP8XfOp1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBmrbl/M2RsKZN+igAAAABJRU5ErkJggg==');
-      background-size: 1536px 1020px;
+    background-color: #123C69;
+    background-size: 1536px 1020px;
     color: #fff;
     padding: 20px 15px;
   }
@@ -39,8 +39,8 @@
 
   .navbar {
     margin-bottom: 0;
-      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAB7CAMAAAB6t7bCAAAADFBMVEWLNbD6aUSBMLb/bDicSfWEAAABNklEQVR4nO3RgQkAIRDAMH3339klhA9HM0K71iDf2YP8XfOp1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBaw2oNqzWs1rBmrbl/M2RsKZN+igAAAABJRU5ErkJggg==');
-      background-size: 1536px 1020px;
+    background-color: #123C69;
+    background-size: 1536px 1020px;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -89,8 +89,7 @@
       <li><a href="{% url 'profile' %}">PROFILE</a></li>
       <li><a href="/suggest/">SUGGEST</a></li>
     {% else %}
-      <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">SIGN IN</a></li>
-      <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">SIGN UP</a></li>
+      <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">LOG IN WITH GOOGLE</a></li>
     {% endif %}
     <li><a href="/contact/">CONTACT</a></li>
     <li><a href="/message/">MESSAGE CENTER</a></li>
@@ -103,8 +102,8 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Your Profile</h1>
-  <p>Edit your profile!</p>
+  <h1 style = "font-family:rubik;font-size:70px;font-style: Bold"> <b>Your Profile</b></h1>
+  <p style = "font-family:georgia,garamond,serif;font-size:25px;font-style: Bold"> Edit your profile!</p>
 </div>
 
 {% block content %}

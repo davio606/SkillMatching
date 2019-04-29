@@ -1,17 +1,15 @@
-{% load crispy_forms_tags %}
-{% load static %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-<link rel="stylesheet" type = "text/css" href="{% static 'users/main.css'%}">
-
-{% block content %}
-        <div class ="border-top pt-3">
-                <a href="{% url 'match:social:begin' 'google-oauth2' %}">Login with Google</a><br>
-        </div>
-{% endblock content %}
+<h1> Login to app </h1>
+<form method="POST">
+        {% csrf_token %}
+    <label for="username">Username: </label>
+    <input id="username" type="text" name="username" required>
+    <label for="password">Password: </label>
+    <input id="password" type="text" name="password" required>
+    <input type="submit" value="Login">
+    <br>
+    <p><strong>-- OR --</strong></p>
+    <a href="{% url 'match:social:begin' 'google-oauth2' %}">Login with Google</a><br>
+</form>

@@ -2,29 +2,31 @@
 {% load static %}
 
 <!DOCTYPE html>
-<head>
+<html lang="en">
+<link href='https://fonts.googleapis.com/css?family=Spectral' rel='stylesheet'>
+
+</head>
   <title>Grasp</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'match/homeStyle.css' %}">
-
   <style>
-html, body {
+
+  html, body {
     max-width: 100%;
     overflow-x: hidden;
-}
+  }
 
   .jumbotron {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/University_of_Virginia_School_of_Law%2C_Library.jpg/1200px-University_of_Virginia_School_of_Law%2C_Library.jpg');
-      background-size: 1536px 1020px;
+    background-color: #123C69;
+    background-size: 1536px 1020px;
     color: #fff;
-    padding: 30px 15px;
+    padding: 50px 25px;
   }
   .container-fluid {
-    padding: 30px 20px;
+    padding: 60px 50px;
   }
   .bg-grey {
     background-color: #f6f6f6;
@@ -35,13 +37,18 @@ html, body {
   }
   .logo {
     color: #f4511e;
+    font-size: 200px;
+  }
+  
+  .stuff {
+    background-color: #f1f2f6;
   }
 
   .navbar {
     margin-bottom: 0;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/University_of_Virginia_School_of_Law%2C_Library.jpg/1200px-University_of_Virginia_School_of_Law%2C_Library.jpg');
-      background-size: 1536px 1020px;
-    z-index: 9999;
+    background-color: #123C69;
+    background-size: 1536px 1020px;
+      z-index: 9999;
     border: 0;
     font-size: 12px !important;
     line-height: 1.42857143 !important;
@@ -49,7 +56,7 @@ html, body {
     border-radius: 0;
   }
   .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
+    color: #FFF !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #f4511e !important;
@@ -71,18 +78,18 @@ html, body {
     padding: 0;
   }
    
-.user-list ul {
+  .user-list ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
 
    
-.user-list li:last-child {
+  .user-list li:last-child {
     border: none;
   }
    
-.user-list li a {
+  .user-list li a {
     text-decoration: none;
     color: #000;
     display: block;
@@ -96,9 +103,9 @@ html, body {
     transition: font-size 0.3s ease, background-color 0.3s ease;
   }
    
-.user-list li a:hover {
+  .user-list li a:hover {
     font-size: 30px;
-    background: #f6f6f6;
+    background: #dcdde1;
   }
 
   hr {
@@ -108,10 +115,10 @@ html, body {
 
   img {
   border-radius: 55%;
-}
+  }
   </style>
 </head>
-<body>
+<body style = "background-color:#f1f2f6">
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -130,8 +137,7 @@ html, body {
         <li><a href="{% url 'profile' %}">PROFILE</a></li>
         <li><a href="/suggest/">SUGGEST</a></li>
       {% else %}
-        <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">SIGN IN</a></li>
-        <li><a href="{% url 'match:social:begin' 'google-oauth2'%}">SIGN UP</a></li>
+         <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">LOG IN WITH GOOGLE</a></li>
       {% endif %}
       <li><a href="/contact/">CONTACT</a></li>
       <li><a href="/message/">MESSAGE CENTER</a></li>
@@ -144,8 +150,8 @@ html, body {
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Grasp</h1>
-  <p>We specialize in study buddying</p>
+  <h1 style = "font-family:rubik;font-size:96px;font-style: Bold"> <b>Grasp</b></h1>
+  <p style = "font-family:georgia,garamond,serif;font-size:28px;font-style: Bold">We specialize in study buddying</p>
   {% if messages %}
     {% for message in messages %}
       <div class="alert alert-{{ message.tags}}">
@@ -169,36 +175,37 @@ html, body {
     </form>
 </div>
 
+
 <div id="user-list" style="padding-left: 20px;">
-  <h1>Potential Study Buddies:</h1>
-  {% if profile_list%}
-      <u1 class="user-list" style="list-style: none;">
-      {% for u in profile_list %}
-      <li class = "user-list">
-        <a href="{% url 'match:choose' u.user.id %}">
-          <span class="user-list" style="font-size:20px">
-            <img src="{{ u.image.url }}" width="45" height="45"/>
-              {{u.user}}<br/>
+    <h1>Potential Study Buddies:</h1>
+    {% if profile_list%}
+        <u1 class="user-list" style="list-style: none;">
+        {% for u in profile_list %}
+        <li class = "user-list">
+          <a href="{% url 'match:choose' u.user.id %}">
+            <span class="user-list" style="font-size:20px">
+              <img src="{{ u.image.url }}" width="45" height="45"/>
+                {{u.user}}<br/>
+            </span>
+            <span class="user-list" style="font-size:15px">
+              {{u.major}}<br/>
           </span>
-          <span class="user-list" style="font-size:15px">
-            {{u.major}}<br/>
-        </span>
-        </a>
-      </li>
-      <hr>
-      {% endfor %}
-      </u1>
-  {% else %}
-      <p>No users are available.</p>
-  {% endif %}
-  <h3>About us</h3>
-  <p>
-      This website was created for the class, CS 3240 at the University of Virginia. The purpose of the application is 
-      to find specific study partners with certain skills and majors. Users can create their own profile, list their 
-      skills and majors, and find others whom they would want to work with. The application's unique features include 
-      the ability to search for students with specific skills and majors, and a feature to save profiles they like. 
-      If you have any questions for us, visit the contact page. Or, if you have any suggestions, please help us by 
-      visiting the Suggest page.
-  </p>
-</div>
-</body>
+          </a>
+        </li>
+        <hr>
+        {% endfor %}
+        </u1>
+    {% else %}
+        <p>No users are available.</p>
+    {% endif %}
+    <h3>About us</h3>
+    <p>
+        This website was created for the class, CS 3240 at the University of Virginia. The purpose of the application is 
+        to find specific study partners with certain skills and majors. Users can create their own profile, list their 
+        skills and majors, and find others whom they would want to work with. The application's unique features include 
+        the ability to search for students with specific skills and majors, and a feature to save profiles they like. 
+        If you have any questions for us, visit the contact page. Or, if you have any suggestions, please help us by 
+        visiting the Suggest page.
+    </p>
+  </div>
+  </body>

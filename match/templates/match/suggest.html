@@ -9,10 +9,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
   .jumbotron {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/University_of_Virginia_School_of_Law%2C_Library.jpg/1200px-University_of_Virginia_School_of_Law%2C_Library.jpg');
-      background-size: 1536px 1020px;
+    background-color: #123C69;
+    background-size: 1536px 1020px;
     color: #fff;
-    padding: 40px 25px;
+    padding: 50px 25px;
   }
   .container-fluid {
     padding: 60px 50px;
@@ -28,12 +28,16 @@
     color: #f4511e;
     font-size: 200px;
   }
+  
+  .stuff {
+    background-color: #e5e8f3;
+  }
 
   .navbar {
     margin-bottom: 0;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/University_of_Virginia_School_of_Law%2C_Library.jpg/1200px-University_of_Virginia_School_of_Law%2C_Library.jpg');
-      background-size: 1536px 1020px;
-    z-index: 9999;
+    background-color: #123C69;
+    background-size: 1536px 1020px;
+      z-index: 9999;
     border: 0;
     font-size: 12px !important;
     line-height: 1.42857143 !important;
@@ -41,7 +45,7 @@
     border-radius: 0;
   }
   .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
+    color: #FFF !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #f4511e !important;
@@ -78,8 +82,7 @@
         <li><a href="{% url 'profile' %}">PROFILE</a></li>
 
       {% else %}
-        <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">SIGN IN</a></li>
-        <li><a href="{% url 'register' %}">SIGN UP</a></li>
+      <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">LOG IN WITH GOOGLE</a></li>
       {% endif %}
 
         <li><a href="/suggest/">SUGGEST</a></li>
@@ -101,8 +104,8 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Help Grasp Grow</h1>
-  <p>We value your feedback</p>
+  <h1 style = "font-family:rubik;font-size:70px;font-style: Bold"> <b>Help Grasp Grow</b></h1>
+  <p style = "font-family:georgia,garamond,serif;font-size:25px;font-style: Bold">We value your feedback</p>
 </div>
 
 <style>
@@ -155,27 +158,27 @@
   </head>
   <body>
   
-  <h2 align="center">Suggestion Form</h2>
+  <h2 align="center" style = "font-family:georgia,garamond,serif;font-size:35px;font-style: Bold">Suggestion Form</h2>
   <form action="{% url 'match:email' %}" method="POST">
       {% csrf_token %}
   <div class="sugg-container">
-      <label for="fname">First Name</label>
+      <label for="fname" style = "font-family:georgia,garamond,serif;font-size:16px;font-style: Bold">First Name</label>
       <input type="text" id="fname" name="fname" placeholder="Your name..">
   
-      <label for="lname">Last Name</label>
+      <label for="lname" style = "font-family:georgia,garamond,serif;font-size:16px;font-style: Bold">Last Name</label>
       <input type="text" id="lname" name="lname" placeholder="Your last name..">
 
-      <label for="email">Email Address</label>
+      <label for="email" style = "font-family:georgia,garamond,serif;font-size:16px;font-style: Bold">Email Address</label>
       <input type="text" id="email" name="email" placeholder="Your email..">
   
-      <label for="user">User</label>
+      <label for="user" style = "font-family:georgia,garamond,serif;font-size:16px;font-style: Bold">User</label>
       <select id="user" name="user">
         <option value="student">Student</option>
         <option value="faculty">Faculty</option>
         <option value="other">Other</option>
       </select>
   
-      <label for="subject" name="subject" type="subject">Subject</label>
+      <label for="subject" name="subject" type="subject" style = "font-family:georgia,garamond,serif;font-size:16px;font-style: Bold">Subject</label>
       <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
       <div style="text-align:center;">
         <input type="submit" value="Submit" style="margin:0px auto; display:block;">

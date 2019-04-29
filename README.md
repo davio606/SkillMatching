@@ -47,3 +47,6 @@ Grasp allows users to message others in a convenient manner. Users can compose a
 ### Joint Calendar System
 Grasp allows users to notify others of group events on a joint calendar. Simply type in the name of the event, a description, the date, and time.
 
+### Suggestions
+Grasp allows users to add suggestions to the website under the 'suggest' tab. For every suggestion made, an email is sent
+to studentskillmatching@gmail.com with password: segfaultstrategists. 

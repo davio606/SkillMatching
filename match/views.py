@@ -136,7 +136,7 @@ def home(request):
     if 'search' in request.GET:
         search_term = request.GET['search']
         #users = users.filter(username__icontains=search_term)
-        profiles = profiles.filter(Q(user__username__icontains=search_term) | Q(major__icontains=search_term) | Q(skill__icontains=search_term))
+        profiles = profiles.filter(Q(user__username__icontains=search_term) | Q(major__icontains=search_term) | Q(skill__icontains=search_term)| Q(user__first_name__icontains=search_term)| Q(user__last_name__icontains=search_term))
 
     context = {
         #'user_list': users,

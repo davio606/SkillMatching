@@ -39,6 +39,7 @@ def profile(request):
     }
     return render(request, 'users/profile.html', context)
 
+@login_required
 def like_post(request, userId):
     user = get_object_or_404(User, pk=userId)
     user.profile.numLikes = user.profile.numLikes + 1
@@ -48,7 +49,8 @@ def like_post(request, userId):
         'user': user,
     }
     return render(request, 'users/noEditProfile.html', context)
-
+    
+@login_required
 def dislike_post(request, userId):
     user = get_object_or_404(User, pk=userId)
 

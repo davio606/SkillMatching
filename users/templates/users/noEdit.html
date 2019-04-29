@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
   .jumbotron {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/University_of_Virginia_School_of_Law%2C_Library.jpg/1200px-University_of_Virginia_School_of_Law%2C_Library.jpg');
+      background-color: #123C69;
       background-size: 1536px 1020px;
     color: #fff;
     padding: 60px 25px;
@@ -30,7 +30,7 @@
   }
   .navbar {
     margin-bottom: 0;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/University_of_Virginia_School_of_Law%2C_Library.jpg/1200px-University_of_Virginia_School_of_Law%2C_Library.jpg');
+    background-color: #123C69;
       background-size: 1536px 1020px;
     z-index: 9999;
     border: 0;
@@ -101,8 +101,7 @@ img{
         <li><a href="/suggest/">SUGGEST</a></li>
 
     {% else %}
-      <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">SIGN IN</a></li>
-      <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">SIGN UP</a></li>
+    <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">LOG IN WITH GOOGLE</a></li>
     {% endif %}
     <li><a href="/contact/">CONTACT</a></li>
     <li><a href="/about/">ABOUT</a></li>

@@ -1,5 +1,6 @@
 myapp
 TODO List:
+-Create Login Redirect page
 -README for Sherriff
 -UI Fix for NOedit profile
 -List References

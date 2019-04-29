@@ -37,7 +37,7 @@ def suggest(request):
     return render(request, 'match/suggest.html')
 
 
-
+@login_required
 def message(request):
     # return HttpResponse("This is the message page")
     profiles = profile.objects.all()
@@ -50,15 +50,18 @@ def message(request):
 
     return render(request, 'match/message.html', context)
 
+@login_required
 def send(request):
     m = Message(sender=request.POST['userFrom'], receiver=request.POST['userTo'],message_content=request.POST['content'], subject=request.POST['subject'])
     m.save()
     return render(request, 'match/success.html')
 
+@login_required
 def calendar(request):
     #return HttpResponse("This is the calendar page")
     return render(request, 'match/calendar.html')
 
+@login_required
 def event(request):
     SCOPES = ['https://www.googleapis.com/auth/calendar']
     creds = ServiceAccountCredentials.from_json_keyfile_name(filename=CLIENT_SECRET_FILE, scopes=SCOPES)

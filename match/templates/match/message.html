@@ -79,8 +79,7 @@
         <li><a href="{% url 'profile' %}">PROFILE</a></li>
         <li><a href="/suggest/">SUGGEST</a></li>
       {% else %}
-        <li><a href="{% url 'login' %}">SIGN IN</a></li>
-        <li><a href="{% url 'register' %}">SIGN UP</a></li>
+      <li><a href="{% url 'match:social:begin' 'google-oauth2' %}">LOG IN WITH GOOGLE</a></li>
       {% endif %}
       <li><a href="/contact/">CONTACT</a></li>
       <li><a href="/message/">MESSAGE CENTER</a></li>

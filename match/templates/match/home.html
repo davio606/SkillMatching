@@ -23,7 +23,7 @@
     background-color: #123C69;
     background-size: 1536px 1020px;
     color: #fff;
-    padding: 50px 25px;
+    padding: 30px 25px;
   }
   .container-fluid {
     padding: 60px 50px;
@@ -185,7 +185,7 @@
           <a href="{% url 'match:choose' u.user.id %}">
             <span class="user-list" style="font-size:20px">
               <img src="{{ u.image.url }}" width="45" height="45"/>
-                {{u.user}}<br/>
+              {{ u.user.get_full_name }}<br/>
             </span>
             <span class="user-list" style="font-size:15px">
               {{u.major}}<br/>

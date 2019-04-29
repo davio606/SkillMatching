@@ -100,7 +100,7 @@ DATABASES = {
     }
 }
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/match' 
 SOCIAL_AUTH_URL_NAMESPACE = 'match:social'
 LOGIN_REDIRECT_URL = 'match:home'
 
